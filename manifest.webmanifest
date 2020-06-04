@@ -1,11 +1,11 @@
 {
-  "name": "bible",
-  "short_name": "bible",
-  "theme_color": "#1976d2",
+  "name": "Bible",
+  "short_name": "Bible",
+  "theme_color": "#4b0101",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
-  "start_url": "./",
+  "start_url": "./book",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
