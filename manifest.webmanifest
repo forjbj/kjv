@@ -3,7 +3,7 @@
   "short_name": "Bible",
   "theme_color": "#4b0101",
   "background_color": "#fafafa",
-  "display": "standalone",
+  "display": "minimal-ui",
   "scope": "./",
   "start_url": "./",
   "icons": [
