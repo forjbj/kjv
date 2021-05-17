@@ -1,0 +1,50 @@
+<!-- Render selected book -->
+<ng-container>
+    <div class = "headings fontType"
+        [innerHTML] = "bibleService.bible[bibleService.testament].books[bibleService.bookSelected].title">
+    </div>
+    <section *ngFor = "let book of bibleService.bible[bibleService.testament].books[bibleService.bookSelected].chapters; let lastChapter=last;">
+        <!-- include id for scroll function and book title info before text -->
+        <div class = "headings fontType"
+            [id] = "book.chapter">
+            <!-- change heading to Psalm for the book of Psalms 
+            (Psalms.json has additional 'description' and attribute
+            'book number (1-5)' - I have removed Psalm book numbers from here even though I included it in
+            the json, not sure how correct it is to include it, so... haven't) -->
+            <h3 *ngIf = "bibleService.bible[bibleService.testament].books[bibleService.bookSelected].bookName ==='Psalms'; else notPsalms">
+                Psalm {{book.chapter}}
+            </h3>
+            <ng-template #notPsalms>
+                <h3 >
+                    Chapter {{book.chapter}}
+                </h3>
+            </ng-template>
+
+        </div>
+        <div *ngFor = "let verses of book.verses; let firstVerse=first">
+            <!-- include Psalm descriptions -->
+            <div *ngIf = "firstVerse">
+                <h5  class = "psalm fontType" [innerHTML] = "verses.description"></h5>
+            </div>
+            <!-- render first verse of each chapter differently -->
+            <div *ngIf = "firstVerse; else notFirst">
+                <p class = "firstVerse fontType" [innerHTML] = "verses.scr"></p>
+            </div>
+            <ng-template #notFirst>
+                <div class = "verses">
+                    <p class = "verseNumber fontType">{{verses.ver}}</p>
+                    <p class = "scripture fontType" [innerHTML] = "verses.scr"></p>
+                </div>
+            </ng-template>
+        </div>
+        <!-- add line between chapters except for the last chapter; see below -->
+        <div *ngIf = "!(lastChapter)">
+            <hr>
+        </div>
+    </section>
+    <!-- book notes at the end of some books and to change font size; see css -->
+    <div class = "notes">
+        <p [innerHTML] = "bibleService.bible[bibleService.testament].books[bibleService.bookSelected].note"></p>
+        <hr>
+    </div>
+</ng-container>

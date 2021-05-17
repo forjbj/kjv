@@ -1,0 +1,15 @@
+<!-- display list of testament books -->
+<div class ="bookGrid" >
+  <ng-container *ngFor = "let book of bibleService.bible[bibleService.testament].books; index as i">
+    <div 
+      routerLink = "../book"
+      (click) = 
+        "bibleService.bookSelected = (i);
+        bibleService.loadFromStorage = false;
+        bibleService.title = (book.bookName);">
+      <div class = "bookItem">
+        <h4>{{book.bookName}}</h4>
+      </div>
+    </div>
+  </ng-container>
+</div>

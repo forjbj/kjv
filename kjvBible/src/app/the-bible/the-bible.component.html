@@ -1,0 +1,65 @@
+<h1 class = "title">
+  BIBLE 
+</h1>
+<nav class = "nav">
+<!-- old testament is array[0]; therefore set to 0 -->
+  <button 
+  class = "testamentButtons"
+  routerLink = "testament" 
+  routerLinkActive="active"
+  (click) = "bibleService.testament = 0; 
+            bibleService.title = bibleService.versionTitle;">
+  Old Testament
+  </button>
+  <div >
+    <div class = "titleCentre">
+      <div *ngIf = "bibleService.title != bibleService.versionTitle">
+        <button autofocus class = "titleButton"
+                (click) = "showChapters = !showChapters">
+          {{bibleService.title}} 
+        </button>
+        <div [ngClass] = "showChapters ? 'chaptersShow' : 'chaptersHide'"
+              (click) = "showChapters = !showChapters">
+          <hr>
+          <div *ngIf = "bibleService.title != 'Psalms'; else notChapter">
+            <p>Chapter number</p>
+          </div>
+          <ng-template #notChapter>
+            <div>
+              <p>Psalm number</p>
+            </div>
+          </ng-template>
+          <hr>
+          <div  class="chapterGrid">
+            <ng-container 
+            *ngFor = "let chapters of bibleService.bible[bibleService.testament].books[bibleService.bookSelected].chapters" >
+              <div 
+                  class = "chapters"
+                  routerLink = "."  fragment = "{{chapters.chapter}}">
+                  {{chapters.chapter }}
+              </div>
+            </ng-container>
+          </div>
+          <hr>
+        </div>
+      </div>
+      <div *ngIf = "bibleService.title == bibleService.versionTitle" class="kjVersion">
+        {{bibleService.title}}
+      </div>
+    </div>
+  </div>
+  
+<!-- new testament is array[1]; therefore set to 1 -->
+  <button 
+  class = "testamentButtons"
+  routerLink="testament"
+  routerLinkActive="active"
+  (click) = "bibleService.testament = 1; 
+            bibleService.title = bibleService.versionTitle">
+  New Testament
+  </button>
+</nav>
+
+<div (click) = "showChapters = false">
+  <router-outlet></router-outlet>
+</div>

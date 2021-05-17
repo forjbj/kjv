@@ -1,0 +1,147 @@
+@import"../../styles.scss";
+
+.title {
+    font-family: "Bookman", Georgia, serif;
+    text-align: center;
+    color: #ffffff;
+    background-color: $primary;
+    margin: 0;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+}
+.titleCentre {
+    font-family: Georgia,"Times New Roman", Times, serif;
+}
+
+// sticky nav
+.nav {
+    position: -webkit-sticky; // needed for apple stuff
+    position: sticky;
+    max-width: 100%;
+    text-align: center;
+    background-color: $secondary;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(5em, 1fr));
+    top: 0;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: space-evenly;
+    transition: top 0.3s; // animate scroll nav for Bible See display-chapter.component.ts
+}
+.kjVersion {
+    color: $lighterSecondary;
+    font-weight: bold;
+}
+// Old and New testament buttons
+.testamentButtons {
+    font-family: "Bookman", Georgia, serif;
+    font-size: 1em;
+    margin: 0.3em;
+    color: $lighterSecondary;
+    padding: 0.5em 1em;
+    border-radius: 0;
+    background-color: $primary;
+    transition: 0.3s;
+    &:hover, &:focus, &:active {
+        color: #ffffff;
+        background-color: $lighterPrimary;
+        outline: 0;
+    }
+    @media (max-width: 768px) {
+        min-width: 6em;
+        padding: 0.3em;
+        font-size: 0.9em;
+    }
+    @media (max-width: 420px) {
+        width: 100%; // needed to make buttons equal on smaller screens
+        margin: 0.3em 0em;
+        padding: 0.3em 0.1em; // needed to stop button going off page
+        font-size: 0.85em;
+    }
+}
+// book title button
+.titleButton {
+    font-family: "Bookman", Georgia, serif;
+    font-weight: bold;
+    font-size: 1em;
+    min-width: 8em;
+    padding: 0.5em 1em;
+    margin: 0.3em;
+    color: $lighterSecondary;
+    background-color: #222;
+    transition: 0.3s;
+    &:hover, &:focus, &:active {
+        color: #f1f2f3;
+        background-color: #777;
+        outline: 0; //needed for chrome
+    }
+    @media (max-width: 768px) {
+        min-width: 7em;
+        padding: 0.3em;
+        font-size: 0.9em;
+    }
+    @media (max-width: 420px) {
+        margin: 0.3em 0em;
+        padding: 0.3em 0.15em; // needed to stop testament buttons going off page
+        font-size: 0.85em;
+    }
+}
+
+// hide/display list chapter numbers
+.chaptersHide {
+    display: none;
+    visibility: hidden;
+}
+.chaptersShow {
+    background-color: rgba($color: #222, $alpha: 0.93);
+    border: 1px solid #777777;
+    box-shadow: 0 12px 7px -7px #333;
+    color: #e1e2e3;
+    font-weight: normal;
+    position: absolute;
+    left: calc((100% - 12em ) / 2); 
+    z-index: 7;
+    display: block;
+    visibility: visible;
+    hr {
+        margin: 0.7em 0.7em;
+    }
+    p {
+        margin: 0;
+    }
+}
+.chapterGrid {
+    max-height: calc(100vh /2);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    width: 10em;
+    text-align: center;
+    display: grid;
+    padding: 1em;
+    grid-gap: 0.7em;
+    grid-template-columns: repeat(auto-fit, minmax(2.4em, 1fr));
+    //font-family: Arial, Helvetica, sans-serif;
+}
+.chapters {
+    border: 1px solid #333333;
+    padding: 0.33em 0em; // needed to make square
+    height: 1.2em; // needed to stop gird 'bouncing' on bold hover
+    line-height: 1.2em; // as above
+    background-color: #444;
+    transition: 0.1s;
+        &:hover, &:focus, &:active {
+            border:1px solid $primary;
+            color: $primary;
+            font-weight: bold;
+            background-color: $lighterSecondary;
+            
+        }
+}
+.chapterScroll {
+    border:1px solid $primary;
+    color: $primary;
+    font-weight: bold;
+    background-color: $lighterSecondary;
+}
+//end display list chapter numbers
