@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1610928890956,
+  "timestamp": 1621227087734,
   "index": "./index.html",
   "assetGroups": [
     {
@@ -12,14 +12,11 @@
       },
       "urls": [
         "./index.html",
-        "./main-es2015.ceb034d8a75b8e652a5d.js",
-        "./main-es5.ceb034d8a75b8e652a5d.js",
+        "./main.a82588cab0595d51497a.js",
         "./manifest.webmanifest",
-        "./polyfills-es2015.c131ee7c37c2ac42bd19.js",
-        "./polyfills-es5.46973b25652f03b563b3.js",
-        "./runtime-es2015.a4dadbc03350107420a4.js",
-        "./runtime-es5.a4dadbc03350107420a4.js",
-        "./styles.204cff3d6526a4db9eff.css"
+        "./polyfills.b8d26a84e3d789031073.js",
+        "./runtime.9acdf3c10389abbfe8f0.js",
+        "./styles.20bd23687e18487e1d83.css"
       ],
       "patterns": []
     },
@@ -55,15 +52,12 @@
     "./assets/icons/icon-512x512.png": "25c722cd9096fa09cee27e7e8414a409e8bd2f48",
     "./assets/icons/icon-72x72.png": "d8187195d7a2a75eb66c0463947fa30c3a111a38",
     "./assets/icons/icon-96x96.png": "05845e01ec1db2e54564079825c8a0d34a05a9a8",
-    "./index.html": "159020df694af7376de0d36c21a85e347393257e",
-    "./main-es2015.ceb034d8a75b8e652a5d.js": "f8bfe9e1b21e5edd70cb7a7ace02068545170a2d",
-    "./main-es5.ceb034d8a75b8e652a5d.js": "a95f9737dac0e1aa4dc1316f1e5b07363fd28577",
-    "./manifest.webmanifest": "b63aa9974f96807bd36731e9fea953ddc5c95464",
-    "./polyfills-es2015.c131ee7c37c2ac42bd19.js": "65c537467564ee0ba776b629f71ed3413413a7cb",
-    "./polyfills-es5.46973b25652f03b563b3.js": "214f4b46e6da9fadd1fae2439f1791ee1ad0f563",
-    "./runtime-es2015.a4dadbc03350107420a4.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "./runtime-es5.a4dadbc03350107420a4.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "./styles.204cff3d6526a4db9eff.css": "dc1f618b28200059ee5f201c3fb50cc63307adf1"
+    "./index.html": "81f90356a058ded10ca10ca118fb2bf3d6e487d2",
+    "./main.a82588cab0595d51497a.js": "828942a7ae47c0f8153147ed2cdcb5c525343386",
+    "./manifest.webmanifest": "29d2b27be6b129da36391759a2f23ca86b28bb63",
+    "./polyfills.b8d26a84e3d789031073.js": "ab0546c159ec55702673cfc596922978895d0520",
+    "./runtime.9acdf3c10389abbfe8f0.js": "80b74f149d7735232f4b2e9c38e6f24e39310176",
+    "./styles.20bd23687e18487e1d83.css": "446c02a11d027b17322ad8ad1253fb726cd88d16"
   },
   "navigationUrls": [
     {
