@@ -5,11 +5,10 @@
       routerLink = "../book"
       (click) = 
         "bibleService.bookSelected = (i);
-        bibleService.loadFromStorage = false;
         bibleService.title = (book.bookName);">
-      <div class = "bookItem">
-        <h4>{{book.bookName}}</h4>
-      </div>
+        <h4 class = "bookItem">
+          {{book.bookName}}
+        </h4>
     </div>
   </ng-container>
 </div>

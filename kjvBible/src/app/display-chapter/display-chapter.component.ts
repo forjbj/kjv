@@ -12,6 +12,8 @@ export class DisplayChapterComponent implements OnInit, AfterViewInit {
 
   public bookNameDisplay: any;
 
+  public book = Number(localStorage.getItem('currentBookIndex'));
+
 
   constructor( public bibleService: BibleService,
                private title: Title,
@@ -19,54 +21,32 @@ export class DisplayChapterComponent implements OnInit, AfterViewInit {
 
     title.setTitle(this.bibleService.title);
 
-  
-    this.bibleService.title = this.bibleService.bible[this.bibleService.testament].books[this.bibleService.bookSelected].bookName;
     // a Bible book needs to be loaded into view;  number is the array index
-    if (this.bibleService.loadFromStorage && (this.bibleService.bookSelected === 0 && this.bibleService.testament === 0)) {
-      // load book from storage if exists
-      if (localStorage.getItem('currentBookIndex') ) {
-      const testament = Number(localStorage.getItem('currentTestamentIndex'));
-      const book = Number(localStorage.getItem('currentBookIndex'));
-      this.bibleService.testament = testament;
-      this.bibleService.bookSelected = book;
-      this.bibleService.title = this.bibleService.bible[this.bibleService.testament].books[this.bibleService.bookSelected].bookName;
-      } else {
-      // load something
-      this.bibleService.title = this.bibleService.bible[0].books[0].bookName;
-      this.bibleService.testament = 0;
-      this.bibleService.bookSelected = 0;
-
-      // reset scroll position if no book in storage
-      localStorage.setItem('scrollYPosition', '0');
-      }
-    }
+    if (this.bibleService.bookSelected != this.book ) {
     // reset scroll position if new book selected;  number is array index
-    if ((this.bibleService.bookSelected !== Number(localStorage.getItem('currentBookIndex'))) ||
-    (this.bibleService.testament !== Number(localStorage.getItem('currentTestamentIndex')))) {
     localStorage.setItem('scrollYPosition', '0');
     localStorage.setItem('chapterCurrent', '1');
-    }
 
-  } 
-    
+    } 
+  }    
 
   ngOnInit() {
 
     // store book for loading on return
     localStorage.setItem( 'currentBookIndex', (this.bibleService.bookSelected).toString());
     localStorage.setItem( 'currentTestamentIndex', (this.bibleService.testament).toString());
-
-    // load current chapter into view
-    const chapterGridCurrent = this.document.querySelectorAll(".chapters");
-    chapterGridCurrent[Number(localStorage.getItem('chapterCurrent'))-1].scrollIntoView();
     
   }
 
   ngAfterViewInit() {
 
+    // load current chapter into view
+    const chapterGridCurrent = this.document.querySelectorAll(".chapters");
+    chapterGridCurrent[Number(localStorage.getItem('chapterCurrent'))-1].scrollIntoView();
+
     // get scroll position (Y offset) from local storage and scroll to it
     window.scroll(0, Number(localStorage.getItem('scrollYPosition')));
-
+ 
     // highlight chapters on scroll
     const chapters = this.document.querySelectorAll("section");
     const chaptersGrid = this.document.querySelectorAll(".chapters");

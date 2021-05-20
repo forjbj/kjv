@@ -6,20 +6,17 @@ import kjvBible from '../assets/bible/Bible.json';
 })
 export class BibleService {
 
-  public title: string = "Bible";
-  public versionTitle = 'King James Version';
-
-  public testament = 0;
-
-  public bookSelected = 0;
-
-  // load last opened Bible book
-  public loadFromStorage = true;
-
   // import Bible
   public bible = kjvBible;
 
+  public versionTitle = 'King James Version';
 
-   constructor() { }
+  public testament:number = Number(localStorage.getItem('currentTestamentIndex')); // defaults to '0' (old testament) if '' or null - javascript is broken
+
+  public bookSelected:number = Number(localStorage.getItem('currentBookIndex')); // defaults to '0' (Genesis) see above
+
+  public title: string = this.bible[this.testament].books[this.bookSelected].bookName ?? "Bible";
+
+    constructor() {}
 
 }

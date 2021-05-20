@@ -11,7 +11,7 @@ import { Meta, Title } from '@angular/platform-browser';
 export class TheBibleComponent implements OnInit {
 
   public showChapters = true;
- 
+
   constructor(public bibleService: BibleService,
               private meta: Meta,
               private title: Title) {
@@ -19,7 +19,7 @@ export class TheBibleComponent implements OnInit {
     title.setTitle('Bible');
     this.meta.addTag({ name: 'description', content: 'Bible - King James Version'});
 
-  }
+  } 
 
   ngOnInit() { }
 
