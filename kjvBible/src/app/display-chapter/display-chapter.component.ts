@@ -12,7 +12,8 @@ export class DisplayChapterComponent implements OnInit, AfterViewInit {
 
   public bookNameDisplay: any;
 
-  public book = Number(localStorage.getItem('currentBookIndex'));
+  private bookStorage = Number(localStorage.getItem('currentBookIndex'));
+  private testamentStorage = Number(localStorage.getItem('currentTestamentIndex'));
 
 
   constructor( public bibleService: BibleService,
@@ -22,7 +23,7 @@ export class DisplayChapterComponent implements OnInit, AfterViewInit {
     title.setTitle(this.bibleService.title);
 
     // a Bible book needs to be loaded into view;  number is the array index
-    if (this.bibleService.bookSelected != this.book ) {
+    if (this.bibleService.title != this.bibleService.bible[this.testamentStorage].books[this.bookStorage].bookName ) {
     // reset scroll position if new book selected;  number is array index
     localStorage.setItem('scrollYPosition', '0');
     localStorage.setItem('chapterCurrent', '1');
