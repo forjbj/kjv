@@ -18,5 +18,4 @@ export class BibleService {
   public title: string = this.bible[this.testament].books[this.bookSelected].bookName ?? "Bible";
 
     constructor() {}
-
 }

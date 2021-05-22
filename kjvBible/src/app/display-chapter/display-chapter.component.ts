@@ -20,7 +20,7 @@ export class DisplayChapterComponent implements OnInit, AfterViewInit {
                private title: Title,
                @Inject(DOCUMENT) private document: Document) { 
 
-    title.setTitle(this.bibleService.title);
+   // title.setTitle(this.bibleService.title);
 
     // a Bible book needs to be loaded into view;  number is the array index
     if (this.bibleService.title != this.bibleService.bible[this.testamentStorage].books[this.bookStorage].bookName ) {
@@ -72,11 +72,19 @@ export class DisplayChapterComponent implements OnInit, AfterViewInit {
     },options);
       chapters.forEach(chapter=> {
       observer.observe(chapter);
+      
+
     })
     }
   
   @HostListener('window:scroll', []) scrolled() {
+    // store scroll position 
     localStorage.setItem('scrollYPosition', window.pageYOffset.toString());
+    
+    // change chapter numbers in tab title as scrolling
+    let tabTitle = (this.bibleService.title).concat(' ',localStorage.getItem('chapterCurrent'));
+    this.title.setTitle(tabTitle);
+
   }
 
 }
