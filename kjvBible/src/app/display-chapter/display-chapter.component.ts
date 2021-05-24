@@ -19,35 +19,28 @@ export class DisplayChapterComponent implements OnInit, AfterViewInit {
   constructor( public bibleService: BibleService,
                private title: Title,
                @Inject(DOCUMENT) private document: Document) { 
-
-   // title.setTitle(this.bibleService.title);
-
-    // a Bible book needs to be loaded into view;  number is the array index
-    if (this.bibleService.title != this.bibleService.bible[this.testamentStorage].books[this.bookStorage].bookName ) {
-    // reset scroll position if new book selected;  number is array index
-    localStorage.setItem('scrollYPosition', '0');
-    localStorage.setItem('chapterCurrent', '1');
-
+                 
+    if (this.bibleService.title != (this.bibleService.bible[this.testamentStorage].books[this.bookStorage].bookName )){
+      // reset scroll position if new book selected;  number is array index
+      localStorage.setItem('scrollYPosition', '0');
+      localStorage.setItem('chapterCurrent', '1');
     } 
-  }    
-
-  ngOnInit() {
-
     // store book for loading on return
     localStorage.setItem( 'currentBookIndex', (this.bibleService.bookSelected).toString());
     localStorage.setItem( 'currentTestamentIndex', (this.bibleService.testament).toString());
-    
+  }    
+
+  ngOnInit() {
+    // load current chapter into view 
+    //MESSES WITH FIREFOX HAVING THIS HERE - HOWEVER DOESN'T WORK PROPERLY ON CHROME IF IT IS NOT HERE -Angular lifecycle hooks are broken
+    const chapterGridCurrent = this.document.querySelectorAll(".chapters");
+    chapterGridCurrent[Number(localStorage.getItem('chapterCurrent'))-1].scrollIntoView();
   }
 
   ngAfterViewInit() {
-
-    // load current chapter into view
-    const chapterGridCurrent = this.document.querySelectorAll(".chapters");
-    chapterGridCurrent[Number(localStorage.getItem('chapterCurrent'))-1].scrollIntoView();
-
     // get scroll position (Y offset) from local storage and scroll to it
     window.scroll(0, Number(localStorage.getItem('scrollYPosition')));
- 
+
     // highlight chapters on scroll
     const chapters = this.document.querySelectorAll("section");
     const chaptersGrid = this.document.querySelectorAll(".chapters");
@@ -72,10 +65,9 @@ export class DisplayChapterComponent implements OnInit, AfterViewInit {
     },options);
       chapters.forEach(chapter=> {
       observer.observe(chapter);
-      
-
     })
-    }
+
+  }
   
   @HostListener('window:scroll', []) scrolled() {
     // store scroll position 
@@ -84,7 +76,6 @@ export class DisplayChapterComponent implements OnInit, AfterViewInit {
     // change chapter numbers in tab title as scrolling
     let tabTitle = (this.bibleService.title).concat(' ',localStorage.getItem('chapterCurrent'));
     this.title.setTitle(tabTitle);
-
   }
 
 }
