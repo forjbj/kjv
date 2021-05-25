@@ -19,32 +19,28 @@ export class DisplayChapterComponent implements OnInit, AfterViewInit {
   constructor( public bibleService: BibleService,
                private title: Title,
                @Inject(DOCUMENT) private document: Document) { 
-                 
+    
+    // reset scroll position if new book selected                
     if (this.bibleService.title != (this.bibleService.bible[this.testamentStorage].books[this.bookStorage].bookName )){
-      // reset scroll position if new book selected;  number is array index
       localStorage.setItem('scrollYPosition', '0');
       localStorage.setItem('chapterCurrent', '1');
     } 
-    // store book for loading on return
-    localStorage.setItem( 'currentBookIndex', (this.bibleService.bookSelected).toString());
-    localStorage.setItem( 'currentTestamentIndex', (this.bibleService.testament).toString());
+
   }    
 
   ngOnInit() {
-    // load current chapter into view 
-    //MESSES WITH FIREFOX HAVING THIS HERE - HOWEVER DOESN'T WORK PROPERLY ON CHROME IF IT IS NOT HERE -Angular lifecycle hooks are broken
-    const chapterGridCurrent = this.document.querySelectorAll(".chapters");
-    chapterGridCurrent[Number(localStorage.getItem('chapterCurrent'))-1].scrollIntoView();
+
+    // store book for loading on return
+    localStorage.setItem( 'currentBookIndex', (this.bibleService.bookSelected).toString());
+    localStorage.setItem( 'currentTestamentIndex', (this.bibleService.testament).toString());
   }
 
   ngAfterViewInit() {
-    // get scroll position (Y offset) from local storage and scroll to it
-    window.scroll(0, Number(localStorage.getItem('scrollYPosition')));
 
     // highlight chapters on scroll
     const chapters = this.document.querySelectorAll("section");
     const chaptersGrid = this.document.querySelectorAll(".chapters");
-    // chaptersGrid[Number(localStorage.getItem('chapterCurrent'))-1].scrollIntoView();
+    chaptersGrid[Number(localStorage.getItem('chapterCurrent'))-1].scrollIntoView();
     const options = {
       root: null, // viewport
       threshold: 0,
@@ -67,6 +63,8 @@ export class DisplayChapterComponent implements OnInit, AfterViewInit {
       observer.observe(chapter);
     })
 
+    // get scroll position (Y offset) from local storage and scroll to it
+    window.scroll(0, Number(localStorage.getItem('scrollYPosition')));
   }
   
   @HostListener('window:scroll', []) scrolled() {
