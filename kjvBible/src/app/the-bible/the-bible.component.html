@@ -15,11 +15,11 @@
     <div class = "titleCentre">
       <div *ngIf = "bibleService.title != bibleService.versionTitle">
         <button autofocus class = "titleButton"
-                (click) = "showChapters = !showChapters">
+                (click) = "bibleService.showChapters = !bibleService.showChapters">
           {{bibleService.title}} 
         </button>
-        <div [ngClass] = "showChapters ? 'chaptersShow' : 'chaptersHide'"
-              (click) = "showChapters = !showChapters">
+        <div [ngClass] = "bibleService.showChapters ? 'chaptersShow' : 'chaptersHide'"
+              (click) = "bibleService.showChapters = !bibleService.showChapters">
           <hr>
           <div *ngIf = "bibleService.title != 'Psalms'; else notChapter">
             <p>Chapter number</p>
@@ -60,6 +60,4 @@
   </button>
 </nav>
 
-<div (click) = "showChapters = false">
-  <router-outlet></router-outlet>
-</div>
+<router-outlet></router-outlet>

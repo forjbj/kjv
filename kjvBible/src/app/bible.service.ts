@@ -17,5 +17,7 @@ export class BibleService {
 
   public title: string = this.bible[this.testament].books[this.bookSelected].bookName ?? "Bible";
 
+  public showChapters = true; //for chapter selection
+
     constructor() {}
 }

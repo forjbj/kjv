@@ -25,7 +25,7 @@ export class DisplayChapterComponent implements OnInit, AfterViewInit {
       localStorage.setItem('scrollYPosition', '0');
       localStorage.setItem('chapterCurrent', '1');
     } 
-
+    bibleService.showChapters = true;
   }    
 
   ngOnInit() {
@@ -40,7 +40,6 @@ export class DisplayChapterComponent implements OnInit, AfterViewInit {
     // highlight chapters on scroll
     const chapters = this.document.querySelectorAll("section");
     const chaptersGrid = this.document.querySelectorAll(".chapters");
-    chaptersGrid[Number(localStorage.getItem('chapterCurrent'))-1].scrollIntoView();
     const options = {
       root: null, // viewport
       threshold: 0,
@@ -61,10 +60,14 @@ export class DisplayChapterComponent implements OnInit, AfterViewInit {
     },options);
       chapters.forEach(chapter=> {
       observer.observe(chapter);
+      //put current chapter in view on grid
+      chaptersGrid[(Number(localStorage.getItem('chapterCurrent'))-1)].scrollIntoView();
+
     })
 
     // get scroll position (Y offset) from local storage and scroll to it
     window.scroll(0, Number(localStorage.getItem('scrollYPosition')));
+
   }
   
   @HostListener('window:scroll', []) scrolled() {

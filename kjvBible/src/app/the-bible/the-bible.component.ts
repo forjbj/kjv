@@ -10,8 +10,6 @@ import { Meta, Title } from '@angular/platform-browser';
 
 export class TheBibleComponent implements OnInit {
 
-  public showChapters = true;
-
   constructor(public bibleService: BibleService,
               private meta: Meta,
               private title: Title) {

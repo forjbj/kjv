@@ -3,7 +3,8 @@
     <div class = "headings fontType"
         [innerHTML] = "bibleService.bible[bibleService.testament].books[bibleService.bookSelected].title">
     </div>
-    <section *ngFor = "let book of bibleService.bible[bibleService.testament].books[bibleService.bookSelected].chapters; let lastChapter=last;">
+    <section *ngFor = "let book of bibleService.bible[bibleService.testament].books[bibleService.bookSelected].chapters; let lastChapter=last;"
+        (click) = "bibleService.showChapters = false">
         <!-- include id for scroll function and book title info before text -->
         <div class = "headings fontType"
             [id] = "book.chapter">
