@@ -25,15 +25,25 @@ div:focus {
     color: $lighterPrimary;
     transform: scale(1.03);
     }
-    &:active, &:focus {
-      ::after {
-        content: '.';
-        color: $lighterPrimary;
-        position: absolute;
-        animation: loading 1s infinite;
-      }
-      color: $lighterPrimary;
+//Text animation while loading
+  &:active, &:focus {
+    background-image: -webkit-linear-gradient(92deg, $lighterPrimary, #865f43);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: hue 10s infinite linear;
+  
+  @keyframes hue {
+    from {
+      -webkit-filter: hue-rotate(0deg);
     }
+    to {
+      -webkit-filter: hue-rotate(-360deg);
+    }
+  }
+  //end Text animation while loading
+
+    color: $lighterPrimary;
+  }
   @media (max-width: 420px) {
     font-size: 0.9em;
   }
