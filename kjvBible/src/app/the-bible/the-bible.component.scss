@@ -98,7 +98,7 @@
     color: #e1e2e3;
     font-weight: normal;
     position: absolute;
-    left: calc((100% - 11em) / 2); 
+    left: calc((100% - 12em) / 2); 
     z-index: 7;
     visibility: visible;
     hr {
@@ -112,7 +112,7 @@
     max-height: calc(100vh /2);
     overflow-y: auto;
     overscroll-behavior: contain;
-    width: 11em;
+    width: 12em;
     text-align: center;
     display: grid;
     padding: 0.7em 0;
