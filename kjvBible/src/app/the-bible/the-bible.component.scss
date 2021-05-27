@@ -54,7 +54,6 @@
     }
     @media (max-width: 420px) {
         width: 100%; // needed to make buttons equal on smaller screens
-        margin: 0.3em 0em;
         padding: 0.3em 0.1em; // needed to stop button going off page
         font-size: 0.85em;
     }
@@ -66,7 +65,7 @@
     font-size: 1em;
     min-width: 8em;
     padding: 0.5em 1em;
-    margin: 0.3em;
+    margin: 0.3em 0;
     color: $lighterSecondary;
     background-color: #222;
     transition: 0.3s;
@@ -99,9 +98,8 @@
     color: #e1e2e3;
     font-weight: normal;
     position: absolute;
-    left: calc((100% - 13em ) / 2); 
+    left: calc((100% - 11em) / 2); 
     z-index: 7;
-    display: block;
     visibility: visible;
     hr {
         margin: 0.7em 0.7em;
@@ -117,7 +115,7 @@
     width: 11em;
     text-align: center;
     display: grid;
-    padding: 0.7em;
+    padding: 0.7em 0;
     grid-gap: 1em;
     grid-template-columns: repeat(auto-fit, 2.4em);
     justify-content: center;
