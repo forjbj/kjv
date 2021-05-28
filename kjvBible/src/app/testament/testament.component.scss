@@ -26,10 +26,16 @@ div:focus {
     transform: scale(1.03);
     }
 //Text animation while loading
-  &:active, &:focus {
-    font-weight: bold;
-    color: $lighterPrimary
+&:active, &:focus {
+  ::after {
+    content: '.';
+    color: #4b0101;
+    position: absolute;
+    animation: loading 1.2s infinite;
   }
+  font-weight: bold;
+  color: $lighterPrimary;
+}
   @media (max-width: 420px) {
     font-size: 0.9em;
   }
