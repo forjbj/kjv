@@ -73,13 +73,10 @@
         outline: 0; //needed for chrome
     }
     @media (max-width: 768px) {
-       // min-width: 7em;
         padding: 0.3em 1em;
         font-size: 0.9em;
     }
     @media (max-width: 420px) {
-        //margin: 0.3em auto;
-        padding: 0.3em 0.15em; // needed to stop testament buttons going off page
         font-size: 0.85em;
     }
 }
