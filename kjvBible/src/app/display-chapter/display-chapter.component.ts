@@ -21,7 +21,7 @@ export class DisplayChapterComponent implements OnInit, AfterViewInit {
                @Inject(DOCUMENT) private document: Document) { 
     
     // reset scroll position if new book selected                
-    if (this.bibleService.title != (this.bibleService.bible[this.testamentStorage].books[this.bookStorage].bookName )){
+    if ((this.bibleService.title != (this.bibleService.bible[this.testamentStorage].books[this.bookStorage].bookName )) || (localStorage.getItem('chapterCurrent') == 'null')){
       localStorage.setItem('scrollYPosition', '0');
       localStorage.setItem('chapterCurrent', '1');
     } 
