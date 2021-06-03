@@ -27,7 +27,7 @@ export class DisplayChapterComponent implements OnInit, AfterViewInit {
     } 
     bibleService.showChapters = true;
     // change tab title on load
-    let tabTitle = (this.bibleService.title).concat(' ',localStorage.getItem('chapterCurrent'));
+    let tabTitle = (this.bibleService.title).concat(' ',(localStorage.getItem('chapterCurrent') ?? '1')); //stop 'null' on first load; loads '1'
     this.title.setTitle(tabTitle);
   }    
 

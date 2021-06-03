@@ -9,6 +9,7 @@ import { environment } from '../environments/environment';
 import { TestamentComponent } from './testament/testament.component';
 import { DisplayChapterComponent } from './display-chapter/display-chapter.component';
 import { TheBibleComponent } from './the-bible/the-bible.component';
+import { UpdateToasterComponent } from './update-toaster/update-toaster.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { TheBibleComponent } from './the-bible/the-bible.component';
     TestamentComponent,
     DisplayChapterComponent,
     TheBibleComponent,
+    UpdateToasterComponent,
   ],
   imports: [
     BrowserModule,
