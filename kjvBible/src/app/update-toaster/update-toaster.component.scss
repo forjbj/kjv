@@ -1,46 +1,50 @@
 .toast {
     visibility: hidden;
-    max-width: 3em;
-    height: 7em;
+    max-width: 8em;
+    height: 8em;
     margin: auto;
     background-color: rgba($color: #333, $alpha: 0.9);
-    backdrop-filter: blur(0.3em);
     color: #fff;
-    text-align: center;
     position: fixed;
-    z-index: 2;
+    z-index: 7; //needed to keep on top of carousel indicators
     left: 0;right:0;
     bottom: 3em;
+    overflow: hidden;
+    white-space: nowrap;
 
     .desc {
         color: #fff;
         padding: 1em;
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        button {
+            background-color: #4b1010;
+            color: white;
+        }
     }
     .img {
         background-image: url("../../assets/icons/icon-192x192.png");
         background-size: contain;
-        width: 7em;
+        width: 8em;
         height: 100%;
         float: left;
-        background-color: #111;
-    }
-    button {
-        background-color: #4b1010;
-        color: white;
+        background-color: black
     }
     &.show {
         visibility: visible;
-        animation: fadein 0.5s, expand 0.5s 0.5s;
-        animation-fill-mode: forwards;
+        animation: fadein 0.7s, expand 1.2s 0.7s;
+        animation-fill-mode: both;
+
     }
 }
 
 @keyframes fadein {
-    from { bottom: 0; opacity: 0;}
-    to { bottom: 3em; opacity: 1;}
+    from { transform: scale(0); opacity: 0;}
+    to { transform: scale(1); opacity: 1;}
 }
 
 @keyframes expand {
-    from {min-width: 3em}
-    to {min-width: 21em}
+    from {min-width: 8em}
+    to {min-width: 23em}
 }

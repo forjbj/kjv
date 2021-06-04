@@ -14,8 +14,9 @@ export class AppComponent {
   constructor(private updates: SwUpdate) {
     
     this.updates.available.subscribe((event) => {
-      //console.log('avaiable!');
       this.updateAvailable = true;
+      console.log('update avaiable');
+
     });
   }
 
