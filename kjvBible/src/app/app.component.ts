@@ -9,7 +9,7 @@ import { SwUpdate } from '@angular/service-worker';
 export class AppComponent {
   title = 'Bible';
 
-  updateAvailable = true;
+  updateAvailable = false;
 
   constructor(private updates: SwUpdate) {
     
