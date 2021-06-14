@@ -2,13 +2,12 @@
 <div class ="bookGrid" >
   <ng-container *ngFor = "let book of bibleService.bible[bibleService.testament].books; index as i">
     <div 
+      class = "bookItem"
       routerLink = "../book"
       (click) = 
         "bibleService.bookSelected = (i);
         bibleService.title = (book.bookName);">
-        <h4 class = "bookItem">
           {{book.bookName}}
-        </h4>
     </div>
   </ng-container>
 </div>

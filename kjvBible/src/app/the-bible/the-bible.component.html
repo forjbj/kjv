@@ -1,6 +1,6 @@
-<h1 class = "title">
+<h2 class = "title">
   BIBLE 
-</h1>
+</h2>
 <nav class = "nav">
 <!-- old testament is array[0]; therefore set to 0 -->
   <button 
@@ -9,7 +9,7 @@
   routerLinkActive="active"
   (click) = "bibleService.testament = 0; 
             bibleService.title = bibleService.versionTitle;">
-  Old Testament
+    Old Testament
   </button>
   <div>
     <div class = "titleCentre">
@@ -56,7 +56,7 @@
   routerLinkActive="active"
   (click) = "bibleService.testament = 1; 
             bibleService.title = bibleService.versionTitle">
-  New Testament
+    New Testament
   </button>
 </nav>
 

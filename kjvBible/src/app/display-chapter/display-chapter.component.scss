@@ -7,19 +7,19 @@
     font-size: 1.3em;
     @media (max-width: 1000px) {
         font-size: 1.2em;
-       // line-height: 1.3em;
     }
     @media (max-width: 768px) {
         font-size: 1.1em;
     }
 }
 .headings {
+    font-family: Georgia,"Times New Roman", Times, serif;
     text-align: center;
-    font-size: 1em;
     // make things a little more compact
-    &::ng-deep h5, ::ng-deep h2, ::ng-deep h4{
+    &::ng-deep h5, ::ng-deep h2, ::ng-deep h3, ::ng-deep h4{
         margin-top: 0.5em;
         margin-bottom: 0.5em; 
+        font-weight: normal;
     }
 }
 .psalm {
@@ -37,19 +37,17 @@
 }
 .firstVerse{
     margin-left: 2em;
-    margin-right: 2em;
+    margin-right: 1em;
     margin-bottom: 0.3em;
     &:first-of-type:first-letter {
         float: left;
         margin-bottom: 0; 
         margin-right: 0.03em;  // required for first letters that are in italics
-        //line-height: 0.9em; // require for chrome to align larger letter and stop verse 2 being pushed aside
         vertical-align: top;
-        font-size: 2em;
+        font-size: 1.9em;
     }
     @media (max-width: 767px) {
         margin-left: 1em;
-        margin-right: 1em;
     }
 }
 .verseNumber {

@@ -23,23 +23,28 @@
     grid-template-columns: repeat(3, minmax(0, 1fr)); //apparently 3 equal columns
     top: 0;
     align-items: center;
-    align-content: center;
     justify-items: center;
-    justify-content: space-evenly;
     transition: top 0.3s; // animate scroll nav for Bible See display-chapter.component.ts
 }
 .kjVersion {
     color: $lighterSecondary;
     font-weight: bold;
+    margin: 0.3em 0;
+    padding: 0.3em;
+}
+// common to all buttons
+button {
+    font-family: "Bookman", Georgia, serif;
+    margin: 0.3em 0;
+    padding: 0.5em;
+    border-radius: 0;
+    width: 100%;
+    min-width: 8.3em;
+    max-width: 15em;
 }
 // Old and New testament buttons
 .testamentButtons {
-    font-family: "Bookman", Georgia, serif;
-    font-size: 1em;
-    margin: 0.3em auto;
     color: $lighterSecondary;
-    padding: 0.5em 1em;
-    border-radius: 0;
     background-color: $primary;
     transition: 0.3s;
     &:hover, &:focus, &:active {
@@ -47,37 +52,20 @@
         background-color: $lighterPrimary;
         outline: 0;
     }
-    @media (max-width: 768px) {
-        padding: 0.3em;
-        font-size: 0.9em;
-    }
-    @media (max-width: 420px) {
-        width: 100%; // needed to make buttons equal on smaller screens
-        padding: 0.3em 0.1em; // needed to stop button going off page
-        font-size: 0.85em;
-    }
 }
 // book title button
 .titleButton {
-    font-family: "Bookman", Georgia, serif;
     font-weight: bold;
-    font-size: 1em;
-    padding: 0.5em 1em;
-    margin: 0.3em auto;
     color: $lighterSecondary;
+   // padding: 0.3 0.5em;
+  //  align-self: center;
+  //  justify-self: center;
     background-color: #222;
     transition: 0.3s;
     &:hover, &:focus, &:active {
         color: #f1f2f3;
         background-color: #777;
         outline: 0; //needed for chrome
-    }
-    @media (max-width: 768px) {
-        padding: 0.3em 1em;
-        font-size: 0.9em;
-    }
-    @media (max-width: 420px) {
-        font-size: 0.85em;
     }
 }
 

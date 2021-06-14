@@ -1,12 +1,12 @@
 <!-- Render selected book -->
 <ng-container>
-    <div class = "headings fontType"
+    <div class = "headings"
         [innerHTML] = "bibleService.bible[bibleService.testament].books[bibleService.bookSelected].title">
     </div>
     <section *ngFor = "let book of bibleService.bible[bibleService.testament].books[bibleService.bookSelected].chapters; let lastChapter=last;"
         (click) = "bibleService.showChapters = false">
         <!-- include id for scroll function and book title info before text -->
-        <div class = "headings fontType"
+        <div class = "headings"
             [id] = "book.chapter">
             <!-- change heading to Psalm for the book of Psalms 
             (Psalms.json has additional 'description' and attribute
@@ -16,7 +16,7 @@
                 Psalm {{book.chapter}}
             </h3>
             <ng-template #notPsalms>
-                <h3 >
+                <h3>
                     Chapter {{book.chapter}}
                 </h3>
             </ng-template>
