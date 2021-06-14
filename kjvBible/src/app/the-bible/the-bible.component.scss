@@ -40,11 +40,11 @@ button {
     padding: 0.5em;
     border-radius: 0;
     width: 100%;
-    min-width: 8.3em;
     max-width: 15em;
 }
 // Old and New testament buttons
 .testamentButtons {
+    align-self: stretch;
     color: $lighterSecondary;
     background-color: $primary;
     transition: 0.3s;
@@ -56,11 +56,9 @@ button {
 }
 // book title button
 .titleButton {
+    min-width: 7em;
     font-weight: bold;
     color: $lighterSecondary;
-   // padding: 0.3 0.5em;
-  //  align-self: center;
-  //  justify-self: center;
     background-color: #222;
     transition: 0.3s;
     &:hover, &:focus, &:active {
