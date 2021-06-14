@@ -22,6 +22,7 @@ div:focus {
   margin: 0.3em;
   background: none;
   transition: all 0.12s;
+  font-size: clamp(1em, 3vw, 1.2em);
   &:hover {
     color: $primary;
     transform: scale(1.03);

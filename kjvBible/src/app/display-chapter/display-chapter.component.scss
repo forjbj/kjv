@@ -13,13 +13,11 @@
     }
 }
 .headings {
-    font-family: Georgia,"Times New Roman", Times, serif;
     text-align: center;
     // make things a little more compact
     &::ng-deep h5, ::ng-deep h2, ::ng-deep h3, ::ng-deep h4{
         margin-top: 0.5em;
         margin-bottom: 0.5em; 
-        font-weight: normal;
     }
 }
 .psalm {
