@@ -1,6 +1,6 @@
 .toast {
     visibility: hidden;
-    max-width: 7em;
+    width: 7em;
     height: 7em;
     margin: auto;
     background-color: rgba($color: #333, $alpha: 0.9);
@@ -13,13 +13,15 @@
     white-space: nowrap;
 
     .desc {
-        font-size: clamp(1em, 3vw, 1.2em);
+        font-size: clamp(1em, 1.3vw, 1.2em);
         color: #fff;
-        padding: 1em;
+        padding: 0.7em 0.2em;
         text-align: center;
         overflow: hidden;
         white-space: nowrap;
+        
         button {
+            margin: 0.3em;
             background-color: #8a1010;
             color: white;
         }
@@ -36,7 +38,6 @@
         visibility: visible;
         animation: fadein 0.7s, expand 1.2s 0.7s;
         animation-fill-mode: both;
-
     }
 }
 
@@ -46,6 +47,6 @@
 }
 
 @keyframes expand {
-    from {min-width: 7em}
-    to {min-width: 21em}
+    from {width: 7em}
+    to {width: clamp(20em, 30vw, 25em)}
 }
