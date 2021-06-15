@@ -15,6 +15,7 @@
 
 // sticky nav
 .nav {
+    width: 100%; // needed for chrome
     position: -webkit-sticky; // needed for apple stuff
     position: sticky;
     text-align: center;
@@ -37,14 +38,12 @@ button {
     font-family: "Bookman", Georgia, serif;
     font-size: 0.9em;
     margin: 0.3em 0;
-    padding: 0.5em;
+    padding: 0.5em 0.3em;
     border-radius: 0;
-    width: 100%;
-    max-width: 15em;
 }
 // Old and New testament buttons
 .testamentButtons {
-    align-self: stretch;
+    width: clamp(8.3em, 20vw, 15em);
     color: $lighterSecondary;
     background-color: $primary;
     transition: 0.3s;
@@ -56,7 +55,6 @@ button {
 }
 // book title button
 .titleButton {
-    min-width: 7em;
     font-weight: bold;
     color: $lighterSecondary;
     background-color: #222;
@@ -65,6 +63,9 @@ button {
         color: #f1f2f3;
         background-color: #777;
         outline: 0; //needed for chrome
+    }
+    @media (min-width: 420px) {
+        width: clamp(8.3em, 24vw, 13em);
     }
 }
 
@@ -115,7 +116,7 @@ button {
             color: $primary;
             font-weight: bold;
             background-color: $lighterSecondary;
-            
+
         }
 }
 .chapterScroll {
