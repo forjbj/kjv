@@ -6,8 +6,8 @@
     color: #ffffff;
     background-color: $primary;
     margin: 0;
-    padding-top: 0.1em;
-    padding-bottom: 0.1em;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
 }
 .titleCentre {
     font-family: Georgia,"Times New Roman", Times, serif;
@@ -30,15 +30,15 @@
 .kjVersion {
     color: $lighterSecondary;
     font-weight: bold;
-    margin: 0.3em 0;
-    padding: 0.3em;
+    margin: 0.3rem 0;
+    padding: 0.3rem;
 }
 // common to all buttons
 button {
     font-family: "Bookman", Georgia, serif;
-    font-size: clamp( 0.8em, 2vw, 1em); //needed to stop horizontal movement on small screens
-    margin: 0.3em 0;
-    padding: 0.5em 0.3em;
+    font-size: clamp( 0.8rem, 2vw, 1rem); //needed to stop horizontal movement on small screens
+    margin: 0.3rem 0;
+    padding: 0.5rem 0.3rem;
     border-radius: 0;
 }
 // Old and New testament buttons
@@ -53,7 +53,7 @@ button {
        outline: 0;
     }
     @media (min-width: 420px) {
-       width: clamp(8.3em, 20vw, 15em);
+       width: clamp(8.3rem, 20vw, 15rem);
     }
 }
 // book title button
@@ -68,7 +68,7 @@ button {
         outline: 0; //needed for chrome
     }
     @media (min-width: 420px) {
-        width: clamp(8.3em, 24vw, 13em);
+        width: clamp(8.3rem, 24vw, 13rem);
     }
 }
 
@@ -89,7 +89,7 @@ button {
     z-index: 1;
     visibility: visible;
     hr {
-        margin: 0.7em 0.7em;
+        margin: 0.7rem 0.7rem;
     }
     p {
         margin: 0;
@@ -99,19 +99,19 @@ button {
     max-height: calc(100vh /2);
     overflow-y: auto;
     overscroll-behavior: contain; // needed to stop scrolling scripture when scrolled to end of chapters
-    width: 12em;
+    width: 12rem;
     text-align: center;
     display: grid;
-    padding: 0.7em 0;
-    grid-gap: 1em;
-    grid-template-columns: repeat(auto-fit, 2.4em);
+    padding: 0.7rem 0;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, 2.4rem);
     justify-content: center;
 }
 .chapters {
     border: 1px solid #111;
-    padding: 0.33em 0em; // needed to make square
-    height: 1.2em; // needed to stop gird 'bouncing' on bold hover
-    line-height: 1.2em; // as above
+    padding: 0.33rem 0rem; // needed to make square
+    height: 1.2rem; // needed to stop gird 'bouncing' on bold hover
+    line-height: 1.2rem; // as above
     background-color: #555;
     transition: 0.1s;
         &:hover, &:focus, &:active {

@@ -3,64 +3,64 @@
 //  increase font size for readablility (I'm old)
 .fontType {
     font-family: Georgia,"Times New Roman", Times, serif;
-    line-height: 1.45em;
-    font-size: 1.3em;
+    line-height: 1.45rem;
+    font-size: 1.3rem;
     @media (max-width: 1000px) {
-        font-size: 1.2em;
+        font-size: 1.2rem;
     }
     @media (max-width: 768px) {
-        font-size: 1.1em;
+        font-size: 1.1rem;
     }
 }
 .headings {
     text-align: center;
     // make things a little more compact
     &::ng-deep h5, ::ng-deep h2, ::ng-deep h3, ::ng-deep h4{
-        margin-top: 0.5em;
-        margin-bottom: 0.5em; 
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem; 
     }
 }
 .psalm {
     text-align: center;
-    margin: 1em 3em;
+    margin: 1rem 3rem;
 }
 .verses {
     display: grid;
     width: 100%;
-    grid-gap: 1em; // needed to stop words scrolling right
-    grid-template-columns: 3em auto;
+    grid-gap: 1rem; // needed to stop words scrolling right
+    grid-template-columns: 3rem auto;
     @media (max-width: 767px) {
-        grid-template-columns: 1em auto; // verse number column smaller for small screens
+        grid-template-columns: 1rem auto; // verse number column smaller for small screens
     }
 }
 .firstVerse{
-    margin-left: 2em;
-    margin-right: 1em;
-    margin-bottom: 0.3em;
+    margin-left: 2rem;
+    margin-right: 1rem;
+    margin-bottom: 0.3rem;
     &:first-of-type:first-letter {
         float: left;
         margin-bottom: 0; 
-        margin-right: 0.03em;  // required for first letters that are in italics
+        margin-right: 0.03rem;  // required for first letters that are in italics
         vertical-align: top;
-        font-size: 1.9em;
+        font-size: 1.9rem;
     }
     @media (max-width: 767px) {
-        margin-left: 1em;
+        margin-left: 1rem;
     }
 }
 .verseNumber {
     text-align: right;
     color: #777;
-    margin: 0.5em 0em;
+    margin: 0.5rem 0rem;
     @media (max-width: 767px) {
-        margin: 0.3em 0em;
+        margin: 0.3rem 0rem;
     }
 }
 // stop scripture going to far right
 .scripture {
-    margin: 0.5em 1em 0.5em 0em;
+    margin: 0.5rem 1rem 0.5rem 0rem;
     @media (max-width: 767px) {
-        margin: 0.3em 1em 0.3em 0em;
+        margin: 0.3rem 1rem 0.3rem 0rem;
     }
 }
 
@@ -68,8 +68,8 @@
 .notes {
     //font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     text-align: center;
-    margin-left: 3em;
-    margin-right: 3em;
+    margin-left: 3rem;
+    margin-right: 3rem;
 }

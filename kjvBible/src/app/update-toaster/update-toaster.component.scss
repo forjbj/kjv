@@ -1,27 +1,27 @@
 .toast {
     visibility: hidden;
-    width: 7em;
-    height: 7em;
+    width: 7rem;
+    height: 7rem;
     margin: auto;
     background-color: rgba($color: #333, $alpha: 0.9);
     color: #fff;
     position: fixed;
     z-index: 7; //needed to keep on top of carousel indicators
     left: 0;right:0;
-    bottom: 3em;
+    bottom: 3rem;
     overflow: hidden;
     white-space: nowrap;
 
     .desc {
-        font-size: clamp(1em, 1.3vw, 1.2em);
+        font-size: clamp(1rem, 1.3vw, 1.2rem);
         color: #fff;
-        padding: 0.7em 0.2em;
+        padding: 0.7rem 0.2rem;
         text-align: center;
         overflow: hidden;
         white-space: nowrap;
         
         button {
-            margin: 0.3em;
+            margin: 0.3rem;
             background-color: #8a1010;
             color: white;
         }
@@ -29,7 +29,7 @@
     .img {
         background-image: url("../../assets/icons/icon-192x192.png");
         background-size: contain;
-        width: 7em;
+        width: 7rem;
         height: 100%;
         float: left;
         background-color: black
@@ -47,6 +47,6 @@
 }
 
 @keyframes expand {
-    from {width: 7em}
-    to {width: clamp(20em, 30vw, 25em)}
+    from {width: 7rem}
+    to {width: clamp(20rem, 30vw, 25rem)}
 }
