@@ -3,7 +3,7 @@
 //  increase font size for readablility (I'm old)
 .fontType {
     font-family: Georgia,"Times New Roman", Times, serif;
-    line-height: 1.45rem;
+    line-height: 1.45em; // needs to stap 'em' units as 'rem' makes everything very wrong
     font-size: 1.3rem;
     @media (max-width: 1000px) {
         font-size: 1.2rem;
@@ -34,7 +34,7 @@
     }
 }
 .firstVerse{
-    margin-left: 2rem;
+    margin-left: 3rem;
     margin-right: 1rem;
     margin-bottom: 0.3rem;
     &:first-of-type:first-letter {
@@ -42,7 +42,7 @@
         margin-bottom: 0; 
         margin-right: 0.03rem;  // required for first letters that are in italics
         vertical-align: top;
-        font-size: 1.9rem;
+        font-size: 2rem;
     }
     @media (max-width: 767px) {
         margin-left: 1rem;
@@ -51,16 +51,16 @@
 .verseNumber {
     text-align: right;
     color: #777;
-    margin: 0.5rem 0rem;
+    margin: 0.5rem 0;
     @media (max-width: 767px) {
-        margin: 0.3rem 0rem;
+        margin: 0.3rem 0;
     }
 }
 // stop scripture going to far right
 .scripture {
-    margin: 0.5rem 1rem 0.5rem 0rem;
+    margin: 0.5rem 1rem 0.5rem 0;
     @media (max-width: 767px) {
-        margin: 0.3rem 1rem 0.3rem 0rem;
+        margin: 0.3rem 1rem 0.3rem 0;
     }
 }
 

@@ -38,7 +38,7 @@ button {
     font-family: "Bookman", Georgia, serif;
     font-size: clamp( 0.8rem, 2vw, 1rem); //needed to stop horizontal movement on small screens
     margin: 0.3rem 0;
-    padding: 0.5rem 0.3rem;
+    padding: 0.4rem 0.3rem;
     border-radius: 0;
 }
 // Old and New testament buttons
@@ -46,14 +46,12 @@ button {
     white-space: nowrap;
     color: $lighterSecondary;
     background-color: $primary;
+    min-width: clamp(5rem, 20vw, 14rem);
     transition: 0.3s;
     &:hover, &:focus, &:active {
        color: #ffffff;
        background-color: $lighterPrimary;
        outline: 0;
-    }
-    @media (min-width: 420px) {
-       width: clamp(8.3rem, 20vw, 15rem);
     }
 }
 // book title button
@@ -61,14 +59,12 @@ button {
     font-weight: bold;
     color: $lighterSecondary;
     background-color: #222;
+    min-width: clamp(4rem, 20vw, 13rem);
     transition: 0.3s;
     &:hover, &:focus, &:active {
         color: #f1f2f3;
         background-color: #777;
         outline: 0; //needed for chrome
-    }
-    @media (min-width: 420px) {
-        width: clamp(8.3rem, 24vw, 13rem);
     }
 }
 
