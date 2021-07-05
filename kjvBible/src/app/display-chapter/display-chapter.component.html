@@ -12,20 +12,20 @@
             (Psalms.json has additional 'description' and attribute
             'book number (1-5)' - I have removed Psalm book numbers from here even though I included it in
             the json, not sure how correct it is to include it, so... haven't) -->
-            <h3 *ngIf = "bibleService.bible[bibleService.testament].books[bibleService.bookSelected].bookName ==='Psalms'; else notPsalms">
-                Psalm {{book.chapter}}
-            </h3>
+            <p class = "fontType" *ngIf = "bibleService.bible[bibleService.testament].books[bibleService.bookSelected].bookName ==='Psalms'; else notPsalms">
+                PSALM {{book.chapter}}
+            </p>
             <ng-template #notPsalms>
-                <h3>
-                    Chapter {{book.chapter}}
-                </h3>
+                <p class="fontType">
+                    CHAPTER {{book.chapter}}
+                </p>
             </ng-template>
 
         </div>
         <div *ngFor = "let verses of book.verses; let firstVerse=first">
             <!-- include Psalm descriptions -->
             <div *ngIf = "firstVerse">
-                <h5  class = "psalm fontType" [innerHTML] = "verses.description"></h5>
+                <p  class = "psalm fontType" [innerHTML] = "verses.description"></p>
             </div>
             <!-- render first verse of each chapter differently -->
             <div *ngIf = "firstVerse; else notFirst">
