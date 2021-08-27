@@ -13,15 +13,15 @@
     font-family: Georgia,"Times New Roman", Times, serif;
 }
 
-// sticky nav
-.nav {
+// sticky nav 
+#nav {
     position: -webkit-sticky; // needed for apple stuff
     position: sticky;
+    top: 0;
     text-align: center;
     background-color: $secondary;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr)); //apparently 3 equal columns
-    top: 0;
     align-items: center;
     justify-items: center;
     justify-content: center;
