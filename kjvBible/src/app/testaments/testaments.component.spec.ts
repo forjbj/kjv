@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { DisplayChapterComponent } from './display-chapter.component';
+import { TestamentsComponent } from './testaments.component';
 
-describe('DisplayChapterComponent', () => {
-  let component: DisplayChapterComponent;
-  let fixture: ComponentFixture<DisplayChapterComponent>;
+describe('TestamentComponent', () => {
+  let component: TestamentsComponent;
+  let fixture: ComponentFixture<TestamentsComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ DisplayChapterComponent ]
+      declarations: [ TestamentsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DisplayChapterComponent);
+    fixture = TestBed.createComponent(TestamentsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

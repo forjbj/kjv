@@ -1,5 +1,8 @@
 @import "../../styles.scss";
-
+.theme {
+    color: $text;
+    background-color: $bg;
+}
 //  increase font size for readablility (I'm old)
 .fontType {
     font-family: Georgia,"Times New Roman", Times, serif;
@@ -57,7 +60,7 @@
 }
 .verseNumber {
     text-align: right;
-    color: #777;
+    color: $middleSecondary;
     margin: 0.5rem 0;
     @media (max-width: 767px) {
         margin: 0.3rem 0;
@@ -70,7 +73,6 @@
         margin: 0.3rem 1rem 0.3rem 0;
     }
 }
-
 //smaller font for end of book notes
 .notes {
     //font-family: Arial, Helvetica, sans-serif;

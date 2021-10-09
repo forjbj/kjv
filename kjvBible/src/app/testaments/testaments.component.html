@@ -1,0 +1,22 @@
+<div id="top" class="theme">
+  <ng-container *ngFor = "let testamentBook of bibleService.bible; index as j">
+    <h2 class = testamentTitle>{{testamentBook.testament}} Testament</h2>
+    <div class ="bookGrid" >
+      <ng-container *ngFor = "let book of bibleService.bible[j].books; index as i">
+        <div 
+          class = "bookItem"
+          routerLink = "../book"
+          (click) = 
+            "bibleService.testament = (j);
+            bibleService.bookSelected = (i);
+            bibleService.title = (book.bookName);">
+              {{book.bookName}}
+        </div>
+      </ng-container>
+    </div>
+    <div *ngIf = "(j)==0">
+      <hr style="width: 50%; text-align: center;">
+      <br>
+    </div>
+  </ng-container>
+</div>  

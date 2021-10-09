@@ -1,0 +1,27 @@
+<div class="menu">
+    <div
+        (click) = "bibleService.title = bibleService.versionTitle;
+        bibleService.displayMenu = !bibleService.displayMenu;"
+        class = "links"
+        routerLink="../testaments"
+        routerLinkActive="active">
+        Bible Book List
+    </div> 
+    <div
+        (click) = "bibleService.title = bibleService.bible[bibleService.testament].books[bibleService.bookSelected].bookName ?? 'Bible';
+        bibleService.displayMenu = !bibleService.displayMenu"
+        class = "links"
+        routerLink="../book"
+        routerLinkActive="active">
+        Current Book
+    </div> 
+    <!-- Dark mode TODO
+    <div class="links">
+        Dark Mode
+        <label class="switch">
+            <input type="checkbox" id="theme" (change)="themeChange()">
+            <span class="slider"></span>
+          </label>
+    </div> 
+-->
+</div>

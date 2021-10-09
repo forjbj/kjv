@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentInit, Component, OnInit } from '@angular/core';
 import { BibleService } from '../bible.service';
 import { Meta, Title } from '@angular/platform-browser';
 
@@ -8,17 +8,28 @@ import { Meta, Title } from '@angular/platform-browser';
   styleUrls: ['./the-bible.component.scss']
 })
 
-export class TheBibleComponent implements OnInit {
+export class TheBibleComponent implements OnInit, AfterContentInit {
+
 
   constructor(public bibleService: BibleService,
               private meta: Meta,
-              private title: Title) {
-
+              private title: Title
+              ) {
+    
     title.setTitle('Bible');
     this.meta.addTag({ name: 'description', content: 'Bible - King James Version'});
+/* Dark mode theme TODO -THIS CODE WORKS DON'T REMOVE
 
+    if (this.bibleService.currentTheme) {
+      document.documentElement.setAttribute('data-theme', this.bibleService.currentTheme); // THIS MAY NEED CHANGING TO WORK? CSS OR SCSS?
+    }
+*/
   } 
 
-  ngOnInit() { }
+  ngOnInit() { 
 
+  }
+  ngAfterContentInit() {
+
+  }
 }

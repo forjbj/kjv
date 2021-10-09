@@ -1,0 +1,24 @@
+<div class="chaptersShow"
+      (click) = "bibleService.showChapters = !bibleService.showChapters">
+  <hr>
+  <div *ngIf = "bibleService.title != 'Psalms'; else notChapter">
+    <p>Chapter number</p>
+  </div>
+  <ng-template #notChapter>
+    <div>
+      <p>Psalm number</p>
+    </div>
+  </ng-template>
+  <hr>
+  <div  class="chapterGrid">
+    <ng-container 
+    *ngFor = "let chapters of bibleService.bible[bibleService.testament].books[bibleService.bookSelected].chapters" >
+      <div 
+          class = "chapters"
+          routerLink = "."  fragment = "{{chapters.chapter}}">
+          {{chapters.chapter }}
+      </div>
+    </ng-container>
+  </div>
+  <hr>
+</div>

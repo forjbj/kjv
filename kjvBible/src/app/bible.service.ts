@@ -17,7 +17,12 @@ export class BibleService {
 
   public title: string = this.bible[this.testament].books[this.bookSelected].bookName ?? "Bible";
 
-  public showChapters = true; //for chapter selection
+  public showChapters = false; //for chapter selection MUST BE false and toggled in display-book.component.ts
+
+  public displayMenu: boolean = false;
+
+  public currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
 
     constructor() {}
 }

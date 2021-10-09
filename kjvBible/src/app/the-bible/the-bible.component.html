@@ -1,66 +1,31 @@
 <!-- This outside/fullpage div is necessary for the nav to stay sticky in apple stuff; don't ask I don't know either-->
 <div> 
-  <h2 class = "title">
-    BIBLE 
-  </h2>
   <nav id = "nav">
-  <!-- old testament is array[0]; therefore set to 0 -->
-    <button 
-    class = "testamentButtons"
-    routerLink = "testament" 
-    routerLinkActive="active"
-    (click) = "bibleService.testament = 0; 
-              bibleService.title = bibleService.versionTitle;">
-      Old Testament
-    </button>
-    <div>
-      <div class = "titleCentre">
-        <div *ngIf = "bibleService.title != bibleService.versionTitle">
-          <button autofocus class = "titleButton"
-                  (click) = "bibleService.showChapters = !bibleService.showChapters">
-            {{bibleService.title}} 
-          </button>
-          <div [ngClass] = "bibleService.showChapters ? 'chaptersShow' : 'chaptersHide'"
-                (click) = "bibleService.showChapters = !bibleService.showChapters">
-            <hr>
-            <div *ngIf = "bibleService.title != 'Psalms'; else notChapter">
-              <p>Chapter number</p>
-            </div>
-            <ng-template #notChapter>
-              <div>
-                <p>Psalm number</p>
-              </div>
-            </ng-template>
-            <hr>
-            <div  class="chapterGrid">
-              <ng-container 
-              *ngFor = "let chapters of bibleService.bible[bibleService.testament].books[bibleService.bookSelected].chapters" >
-                <div 
-                    class = "chapters"
-                    routerLink = "."  fragment = "{{chapters.chapter}}">
-                    {{chapters.chapter }}
-                </div>
-              </ng-container>
-            </div>
-            <hr>
-          </div>
-        </div>
-        <div *ngIf = "bibleService.title == bibleService.versionTitle" class="kjVersion">
-          {{bibleService.title}}
-        </div>
-      </div>
+    <div *ngIf = "bibleService.title != bibleService.versionTitle; else version">
+      <button autofocus class = "titleButton"
+              (click) = "bibleService.showChapters = !bibleService.showChapters; showChapters = false">
+        {{bibleService.title}} 
+      </button>
+      <app-chapter-numbers *ngIf = "this.bibleService.showChapters" ></app-chapter-numbers>
     </div>
-    
-  <!-- new testament is array[1]; therefore set to 1 -->
-    <button 
-    class = "testamentButtons"
-    routerLink="testament"
-    routerLinkActive="active"
-    (click) = "bibleService.testament = 1; 
-              bibleService.title = bibleService.versionTitle">
-      New Testament
-    </button>
+    <ng-template #version >
+      <div class="bible">
+        Bible
+      </div>
+      <div class="kjVersion">
+        ({{bibleService.title}})
+      </div>
+    </ng-template>
+    <div
+      class = "menuButton"
+      (click) = "bibleService.displayMenu = !bibleService.displayMenu;
+      bibleService.showChapters = false"
+      >
+      <span></span>
+      <span></span>
+      <span></span>
+    </div> 
+    <app-menu *ngIf = "bibleService.displayMenu"></app-menu>
   </nav>
-
   <router-outlet></router-outlet>
 </div>

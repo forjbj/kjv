@@ -1,12 +1,14 @@
+@import"../../styles.scss";
+
 .toast {
     visibility: hidden;
     width: 7rem;
     height: 7rem;
     margin: auto;
-    background-color: rgba($color: #333, $alpha: 0.9);
-    color: #fff;
+    background-color: RGBA( (var ($secondary)), 0.9);
+    color: var ($text);
     position: fixed;
-    z-index: 7; //needed to keep on top of carousel indicators
+    z-index: 7; //needed to keep on top
     left: 0;right:0;
     bottom: 3rem;
     overflow: hidden;
@@ -14,7 +16,7 @@
 
     .desc {
         font-size: clamp(0.9rem, 1.5vw, 1.2rem);
-        color: #fff;
+        color: var ($text);
         padding: 0.7rem 0.2rem;
         text-align: center;
         overflow: hidden;
@@ -22,8 +24,8 @@
         
         button {
             margin: 0.3rem;
-            background-color: #8a1010;
-            color: white;
+            background-color: var ($lighterPrimary);
+            color: var ($text);
         }
     }
     .img {
@@ -32,7 +34,7 @@
         width: 7rem;
         height: 100%;
         float: left;
-        background-color: black
+        background-color: var ($bg);
     }
     &.show {
         visibility: visible;

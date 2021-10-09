@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TestamentComponent } from './testament/testament.component';
-import { DisplayChapterComponent } from './display-chapter/display-chapter.component';
+import { TestamentsComponent } from './testaments/testaments.component';
+import { DisplayBookComponent } from './display-book/display-book.component';
 
 const routes: Routes = [
   { path: '',
   redirectTo: 'book',
   pathMatch: 'full',
   },
-  { path: 'testament',
-    component: TestamentComponent,
+  { path: 'testaments',
+    component: TestamentsComponent,
   },
   { path: 'book',
-    component: DisplayChapterComponent,
+    component: DisplayBookComponent,
   },
 ];
 
@@ -20,7 +20,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, {
     anchorScrolling: 'enabled',
-    scrollOffset: [0, 63],
+    scrollOffset: [0, 52],
     relativeLinkResolution: 'legacy'
 })
   ],

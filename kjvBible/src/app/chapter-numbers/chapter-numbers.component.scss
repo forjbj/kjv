@@ -1,0 +1,53 @@
+@import"../../styles.scss";
+
+.chaptersShow {
+    z-index: 3;
+    background-color: rgba( $secondary,  0.95);
+    border: 1px solid var ($bg);
+    box-shadow: 0 12px 7px -7px $secondary;
+    color: $text;
+    position: absolute;
+    display: block;
+    top: 2em;
+    left: 50%;
+    transform:translateX(-50%);
+    hr {
+        margin: 0.7rem 0.7rem;
+    }
+    p {
+        margin: 0;
+    }
+}
+.chapterGrid {
+    max-height: calc(100vh /2);
+    overflow-y: auto;
+    overscroll-behavior: contain; // needed to stop scrolling scripture when scrolled to end of chapters
+    width: 12rem;
+    text-align: center;
+    display: grid;
+    padding: 0.7rem 0;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, 2.4rem);
+    justify-content: center;
+}
+.chapters {
+    border: 1px solid $bg;
+    padding: 0.33rem 0rem; // needed to make square
+    height: 1.2rem; // needed to stop gird 'bouncing' on bold hover
+    line-height: 1.2rem; // as above
+    background-color: $lighterSecondary;
+    transition: 0.1s;
+        &:hover, &:focus, &:active {
+            border:1px solid $primary;
+            color: $primary;
+            font-weight: bold;
+            background-color: $lighterSecondary;
+
+        }
+}
+.chapterScroll {
+    border:1px solid $primary;
+    color: $primary;
+    font-weight: bold;
+    background-color: $middleSecondary;
+}

@@ -6,18 +6,22 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
-import { TestamentComponent } from './testament/testament.component';
-import { DisplayChapterComponent } from './display-chapter/display-chapter.component';
+import { TestamentsComponent } from './testaments/testaments.component';
+import { DisplayBookComponent } from './display-book/display-book.component';
 import { TheBibleComponent } from './the-bible/the-bible.component';
 import { UpdateToasterComponent } from './update-toaster/update-toaster.component';
+import { MenuComponent } from './menu/menu.component';
+import { ChapterNumbersComponent } from './chapter-numbers/chapter-numbers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestamentComponent,
-    DisplayChapterComponent,
+    TestamentsComponent,
+    DisplayBookComponent,
     TheBibleComponent,
     UpdateToasterComponent,
+    MenuComponent,
+    ChapterNumbersComponent,
   ],
   imports: [
     BrowserModule,

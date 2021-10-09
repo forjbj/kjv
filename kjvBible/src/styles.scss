@@ -1,9 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 // Global colours for easy colour scheme change
+
 $secondary: #333;
+$middleSecondary: #777;
 $lighterSecondary: #aaa;
 $lighterPrimary: #8A0707;
 $primary: #4b0101;
+$bg: #f1f2f3;
+$text: #070707;
 
 html {
     scroll-behavior: smooth;
@@ -11,9 +15,8 @@ html {
 body {
     margin: auto;
 }
-
 hr {
-    border-color: $lighterPrimary;
+    border-color: #8A0707;
 }
 h1, h2, h3, h4, h5 {
     font-family: Georgia,"Times New Roman", Times, serif;
