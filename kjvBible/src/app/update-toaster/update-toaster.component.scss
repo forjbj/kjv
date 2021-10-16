@@ -16,7 +16,7 @@
 
     .desc {
         font-size: clamp(0.9rem, 1.5vw, 1.2rem);
-        color: var ($text);
+        color: $bg;
         padding: 0.7rem 0.2rem;
         text-align: center;
         overflow: hidden;
@@ -34,7 +34,7 @@
         width: 7rem;
         height: 100%;
         float: left;
-        background-color: var ($text);
+        background-color: $text;
     }
     &.show {
         visibility: visible;
