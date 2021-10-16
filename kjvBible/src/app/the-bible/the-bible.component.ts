@@ -1,5 +1,6 @@
 import { AfterContentInit, Component, OnInit } from '@angular/core';
 import { BibleService } from '../bible.service';
+import { HistoryService } from '../history.service';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
@@ -12,6 +13,7 @@ export class TheBibleComponent implements OnInit, AfterContentInit {
 
 
   constructor(public bibleService: BibleService,
+              public historyService: HistoryService,
               private meta: Meta,
               private title: Title
               ) {

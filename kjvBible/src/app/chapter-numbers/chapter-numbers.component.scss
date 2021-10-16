@@ -1,5 +1,7 @@
 @import"../../styles.scss";
-
+.heading {
+    color: $bg;
+}
 .chaptersShow {
     z-index: 3;
     background-color: rgba( $secondary,  0.95);
@@ -36,6 +38,7 @@
     height: 1.2rem; // needed to stop gird 'bouncing' on bold hover
     line-height: 1.2rem; // as above
     background-color: $lighterSecondary;
+    cursor: pointer;
     transition: 0.1s;
         &:hover, &:focus, &:active {
             border:1px solid $primary;

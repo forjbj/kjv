@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { AfterViewInit, Component, Inject, OnInit } from '@angular/core';
 import { BibleService } from '../bible.service';
+import { HistoryService } from '../history.service';
 
 @Component({
   selector: 'app-chapter-numbers',
@@ -10,6 +11,7 @@ import { BibleService } from '../bible.service';
 export class ChapterNumbersComponent implements OnInit, AfterViewInit {
 
   constructor(public bibleService: BibleService,
+              public historyService: HistoryService,
              @Inject(DOCUMENT) private document: Document) { }
 
   ngOnInit(): void { }
@@ -28,15 +30,15 @@ export class ChapterNumbersComponent implements OnInit, AfterViewInit {
       let chapter = entry.target.querySelector("div").id;         
       if (entry.isIntersecting) {
         chaptersGrid[Number(chapter)-1].classList.add("chapterScroll");
-                //keep current chapter
-        localStorage.setItem('chapterCurrent', chapter);  
+        //keep current chapter
+        localStorage.setItem('currentChapter', chapter);  
       }
       else {
         chaptersGrid[Number(chapter)-1].classList.remove("chapterScroll");       
       }
     });
     //block: "nearest" is essential to stop page moving!
-    chaptersGrid[(Number(localStorage.getItem('chapterCurrent'))-1)].scrollIntoView({block: "nearest"}); 
+    chaptersGrid[(Number(localStorage.getItem('currentChapter'))-1)].scrollIntoView({block: "nearest"}); 
     },options);
       chapters.forEach(chapter=> {
       observer.observe(chapter);

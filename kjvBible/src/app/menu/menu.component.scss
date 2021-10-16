@@ -9,6 +9,14 @@
   right: 0;
   background-color: $secondary;
   color: $lighterSecondary;
+  hr {
+    // check divider in line with links
+    margin: 1em;
+  }
+}
+.history {
+  text-align: left;
+  margin: 1em;
 }
 .links {
   text-align: left;

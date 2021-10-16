@@ -17,8 +17,7 @@ export class TestamentsComponent implements AfterViewInit {
     
   }
   ngAfterViewInit() {
-    // scrolls to top - sort of; scrolls under nav
- //   document.getElementById('top').scrollIntoView();
+
   }
 
 }

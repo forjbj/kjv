@@ -1,9 +1,10 @@
 <!-- This outside/fullpage div is necessary for the nav to stay sticky in apple stuff; don't ask I don't know either-->
 <div> 
   <nav id = "nav">
-    <div *ngIf = "bibleService.title != bibleService.versionTitle; else version">
+    <div *ngIf = "bibleService.title != bibleService.versionTitle; else version"
+        (click) = "bibleService.displayMenu = false;">
       <button autofocus class = "titleButton"
-              (click) = "bibleService.showChapters = !bibleService.showChapters; showChapters = false">
+              (click) = "bibleService.showChapters = !bibleService.showChapters;">
         {{bibleService.title}} 
       </button>
       <app-chapter-numbers *ngIf = "this.bibleService.showChapters" ></app-chapter-numbers>
@@ -18,14 +19,14 @@
     </ng-template>
     <div
       class = "menuButton"
-      (click) = "bibleService.displayMenu = !bibleService.displayMenu;
-      bibleService.showChapters = false"
-      >
+      (click) = "historyService.savePosition();
+                bibleService.displayMenu = !bibleService.displayMenu;
+                bibleService.showChapters = false" >
       <span></span>
       <span></span>
       <span></span>
     </div> 
-    <app-menu *ngIf = "bibleService.displayMenu"></app-menu>
+    <app-menu *ngIf = "bibleService.displayMenu" ></app-menu>
   </nav>
   <router-outlet></router-outlet>
 </div>

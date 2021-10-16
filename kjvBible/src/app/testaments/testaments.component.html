@@ -5,7 +5,7 @@
       <ng-container *ngFor = "let book of bibleService.bible[j].books; index as i">
         <div 
           class = "bookItem"
-          routerLink = "../book"
+          [routerLink] = "['/book', book.bookName]"
           (click) = 
             "bibleService.testament = (j);
             bibleService.bookSelected = (i);

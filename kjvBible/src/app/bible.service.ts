@@ -17,11 +17,14 @@ export class BibleService {
 
   public title: string = this.bible[this.testament].books[this.bookSelected].bookName ?? "Bible";
 
-  public showChapters = false; //for chapter selection MUST BE false and toggled in display-book.component.ts
+  public showChapters = false; //for chapter selection MUST BE false and toggled in display-book.component.ts (scroll through chapters doesn't work otherwise); not working TODO
 
   public displayMenu: boolean = false;
 
+  public menuHistoryBook: boolean = false;
+
   public currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
 
 
     constructor() {}

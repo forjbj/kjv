@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BibleService } from '../bible.service';
-
+import { HistoryService } from '../history.service';
 
 @Component({
   selector: 'app-menu',
@@ -10,8 +10,10 @@ import { BibleService } from '../bible.service';
 export class MenuComponent implements OnInit {
 
 
-  constructor(public bibleService: BibleService ) {
+  constructor(public bibleService: BibleService,
+              public historyService: HistoryService ) {
 
+    this.historyService.menuBooks();
    }
 
   ngOnInit(): void {
