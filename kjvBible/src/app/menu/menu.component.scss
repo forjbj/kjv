@@ -2,7 +2,7 @@
 
 .menu {
   position: absolute;
-  width: auto;
+  min-width: 20%;
   z-index: 3;
   top: 2em;
   border: 1px solid var ($bg);

@@ -7,9 +7,10 @@ nav {
     top: 0;
     text-align: center;
     background-color: $secondary;
+    border-bottom: black solid 1px;
     font-family: "Bookman", Georgia, serif;
     color: $lighterSecondary;
-    height: 2em;
+    height: 2.2em;
     transition: top 0.3s; // animate scroll nav for Bible See display-chapter.component.ts
 } 
 .bible {
@@ -27,7 +28,7 @@ nav {
     background-color: $middleSecondary;
     min-width: clamp(7rem, 30vw, 13rem);
     padding: 0.3em;
-    margin: 0.15em;
+    margin: 0.3em;
     transition: 0.3s;
     &:hover, &:focus, &:active {
         color: $text;
@@ -36,13 +37,13 @@ nav {
     }
 }
 .menuButton {
-    margin: 0;
+    margin: 0.1em;
     position: absolute;
     right: 1em;
     top: 0;
     cursor: pointer;
     width: 2em;
-    height: inherit;
+    height: 2em;
     span {
         position: absolute;
         display: block;
