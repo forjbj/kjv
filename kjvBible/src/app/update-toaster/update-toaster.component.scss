@@ -5,8 +5,7 @@
     width: 7rem;
     height: 7rem;
     margin: auto;
-    background-color: RGBA( (var ($secondary)), 0.9);
-    color: var ($text);
+    background-color: $ink;
     position: fixed;
     z-index: 7; //needed to keep on top
     left: 0;right:0;
@@ -14,18 +13,21 @@
     overflow: hidden;
     white-space: nowrap;
 
-    .desc {
+    .message {
         font-size: clamp(0.9rem, 1.5vw, 1.2rem);
-        color: $bg;
         padding: 0.7rem 0.2rem;
         text-align: center;
         overflow: hidden;
         white-space: nowrap;
+        color: $paper;
         
         button {
             margin: 0.3rem;
-            background-color: var ($lighterPrimary);
-            color: var ($text);
+            background-color: $darkRed;
+            color: $paper;
+            &:hover, &:focus, &:active {
+                background-color: $lightRed;
+            }
         }
     }
     .img {
@@ -34,7 +36,7 @@
         width: 7rem;
         height: 100%;
         float: left;
-        background-color: $text;
+        background-color: $zPaper;
     }
     &.show {
         visibility: visible;

@@ -1,16 +1,13 @@
 @import"../../styles.scss";
-.heading {
-    color: $bg;
-}
+
 .chaptersShow {
     z-index: 3;
-    background-color: rgba( $secondary,  0.95);
-    border: 1px solid var ($bg);
-    box-shadow: 0 12px 7px -7px $secondary;
-    color: $text;
+    background-color: rgba( $zPaper,  0.97);
+    border: 0 1px 1px 1px solid $ink;
+    box-shadow: 0 12px 7px -7px $zPaper;
+    color: $zInk;
     position: absolute;
     display: block;
-    top: 2em;
     left: 50%;
     transform:translateX(-50%);
     hr {
@@ -33,24 +30,24 @@
     justify-content: center;
 }
 .chapters {
-    border: 1px solid $bg;
+    border: 1px solid $buttonBorder;
     padding: 0.33rem 0rem; // needed to make square
     height: 1.2rem; // needed to stop gird 'bouncing' on bold hover
     line-height: 1.2rem; // as above
-    background-color: $lighterSecondary;
+    background-color: $button;
     cursor: pointer;
     transition: 0.1s;
         &:hover, &:focus, &:active {
-            border:1px solid $primary;
-            color: $primary;
+            border:1px solid $button;
+            color: $darkRed;
             font-weight: bold;
-            background-color: $lighterSecondary;
+            background-color: $buttonActive;
 
         }
 }
 .chapterScroll {
-    border:1px solid $primary;
-    color: $primary;
+    border:1px solid $button;
+    color: $darkRed;
     font-weight: bold;
-    background-color: $middleSecondary;
+    background-color: $buttonActive;
 }

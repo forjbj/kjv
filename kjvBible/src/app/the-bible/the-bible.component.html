@@ -18,7 +18,8 @@
       </div>
     </ng-template>
     <div
-      class = "menuButton"
+      class="menuButton"
+      [ngClass] = "bibleService.displayMenu ? 'menuButtonActive' : 'menuButton'"
       (click) = "historyService.savePosition();
                 bibleService.displayMenu = !bibleService.displayMenu;
                 bibleService.showChapters = false" >

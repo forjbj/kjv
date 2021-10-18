@@ -6,33 +6,32 @@ nav {
     position: sticky;
     top: 0;
     text-align: center;
-    background-color: $secondary;
-    border-bottom: black solid 1px;
+    background-color: $nav;
+    border-bottom: $ink solid 1px;
     font-family: "Bookman", Georgia, serif;
-    color: $lighterSecondary;
+    color: $zInk;
     height: 2.2em;
     transition: top 0.3s; // animate scroll nav for Bible See display-chapter.component.ts
 } 
 .bible {
-    color: $bg;
     font-variant: small-caps;
 }
 .kjVersion {
-    color: $lighterSecondary;
     font-size: 0.7em;
 } 
 // book title button
 .titleButton {
     font-weight: bold;
-    color: $bg;
-    background-color: $middleSecondary;
+    color: $zInk;
+    background-color: $button;
     min-width: clamp(7rem, 30vw, 13rem);
     padding: 0.3em;
     margin: 0.3em;
+    cursor: pointer;
     transition: 0.3s;
     &:hover, &:focus, &:active {
-        color: $text;
-        background-color: $bg;
+        color: $ink;
+        background-color: $buttonActive;
         outline: 0; //needed for chrome
     }
 }
@@ -44,21 +43,25 @@ nav {
     cursor: pointer;
     width: 2em;
     height: 2em;
+    &:hover span, &:focus span{
+        background-color: $buttonActive;
+    }
     span {
         position: absolute;
         display: block;
 		width: 100%;
 		height: 0.4em;
-		background-color: $lighterSecondary;
+		background-color: $button;
 		border-radius: 0.25em;
 		transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965);
+        
 
 		&:first-of-type {
 			top: 0.1em;
 		}
         &:nth-of-type(2) {
             top: 50%;
-       //     -ms-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
             transform: translateY(-50%);
         }
 		&:last-of-type {
@@ -81,4 +84,6 @@ nav {
             }
     }
 }
-
+.menuButtonActive span {
+    background-color: $buttonActive;
+}

@@ -4,11 +4,10 @@
   position: absolute;
   min-width: 20%;
   z-index: 3;
-  top: 2em;
-  border: 1px solid var ($bg);
+  border: 0 1px 1px 1px solid $ink;
   right: 0;
-  background-color: $secondary;
-  color: $lighterSecondary;
+  background-color: rgba( $zPaper,  0.97);
+  color: $zInk;
   hr {
     // check divider in line with links
     margin: 1em;
@@ -25,6 +24,10 @@
 }
 //dark mode toggle switch
 // The switch - the box around the slider
+.mode {
+  text-align: left;
+  margin: 1em;
+}
 .switch {
   position: relative;
   float: right;
@@ -45,9 +48,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: $lighterSecondary;
-  -webkit-transition: .4s;
-  transition: .4s;
+  background-color: $lightRed;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 .slider:before {
   position: absolute;
@@ -55,20 +58,20 @@
   height: 1em;
   width: 1em;
   left: 0.1em;
-  bottom: 0.1em;
-  background-color: $text;
-  -webkit-transition: .4s;
-  transition: .4s;
+  margin: 0.1em auto;
+  background-color: $zInk;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 } 
 input:checked + .slider {
-  background-color: $primary;
+  background-color: $darkRed;
 }
 input:focus + .slider {
-  box-shadow: 0 0 1px $secondary;
+  box-shadow: 0 0 1px $button;
 }
 input:checked + .slider:before {
-  -webkit-transform: translateX(1.8em);
-  -ms-transform: translateX(1.8em);
-  transform: translateX(1.8em);
+  -webkit-transform: translateX(1.7em);
+  -ms-transform: translateX(1.7em);
+  transform: translateX(1.7em);
 }
 // end dark mode toggle switch

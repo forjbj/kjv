@@ -1,7 +1,7 @@
 @import "../../styles.scss";
 .theme {
-    color: $text;
-    background-color: $bg;
+    color: $ink;
+    background-color: $paper;
 }
 //  increase font size for readablility (I'm old)
 .fontType {
@@ -60,7 +60,7 @@
 }
 .verseNumber {
     text-align: right;
-    color: $middleSecondary;
+    color: $button;
     margin: 0.5rem 0;
     @media (max-width: 767px) {
         margin: 0.3rem 0;

@@ -25,7 +25,7 @@ export class MenuComponent implements OnInit {
     }
 */
   }
-/* Dark mode theme TODO -THIS CODE WORKS DON'T REMOVE
+/* Dark mode theme TODO -THIS CODE WORKS DON'T REMOVE 
   themeChange(){
       let theme = document.getElementById('theme') as HTMLInputElement;
       let el = document.body;

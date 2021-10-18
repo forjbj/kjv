@@ -1,13 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 // Global colours for easy colour scheme change
 
-$secondary: #333;
-$middleSecondary: #777;
-$lighterSecondary: #aaa;
-$lighterPrimary: #8A0707;
-$primary: #4b0101;
-$bg: #f1f2f3;
-$text: #070707;
+$nav: #444;
+$paper: #f1f2f3;
+$ink: #000;
+$zPaper: #333;
+$zInk: #ddd;
+$button: #777;
+$buttonActive: #aaa;
+$buttonBorder: #111;
+$darkRed: #4b0101;
+$lightRed: #8A0707;
+
 
 html {
     scroll-behavior: smooth;
@@ -16,7 +20,7 @@ body {
     margin: auto;
 }
 hr {
-    border-color: #8A0707;
+    border-color: $lightRed;
 }
 h1, h2, h3, h4, h5 {
     font-family: Georgia,"Times New Roman", Times, serif;

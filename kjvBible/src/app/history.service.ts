@@ -107,6 +107,7 @@ export class HistoryService {
   localStorage.setItem('currentBookIndex', (this.bibleService.bookSelected).toString());
 
   this.bibleService.showChapters = false;
+  this.bibleService.displayMenu = false;
   
   //hack to force angular to reload with the above parameters - route to '/' then back
   this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
