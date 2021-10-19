@@ -24,7 +24,7 @@
         button {
             margin: 0.3rem;
             background-color: var(--darkRed);
-            color: var(--paper);
+            color: var(--buttonActive);
             &:hover, &:focus, &:active {
                 background-color: var(--lightRed);
             }

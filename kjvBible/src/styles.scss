@@ -24,22 +24,11 @@ html[dataTheme = 'dark'] {
     --darkRed: #4b0101;
     --lightRed: #8A0707;
 }
-/*
-$nav: #444;
-$paper: #f1f2f3;
-$ink: #000;
-$zPaper: #333;
-$zInk: #ddd;
-$button: #777;
-$buttonActive: #aaa;
-$buttonBorder: #111;
-$darkRed: #4b0101;
-$lightRed: #8A0707;
-*/
 
 html {
     scroll-behavior: smooth;
 }
+
 body {
     color: var(--ink);
     background-color: var(--paper);

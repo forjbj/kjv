@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 })
 export class HistoryService {
 
+  public currentTheme:string = localStorage.getItem('theme');
+
   public currentBookMenu: string;
   public secondBookMenu: string;
   public thirdBookMenu: string;

@@ -26,9 +26,6 @@ export class BibleService {
 
   public menuHistoryBook: boolean = false;
 
-  public currentTheme = localStorage.getItem('theme');
-
-
 
     constructor() {}
 }

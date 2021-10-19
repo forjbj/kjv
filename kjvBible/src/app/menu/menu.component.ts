@@ -19,7 +19,7 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
 
     const toggleSwitch = document.getElementById('theme') as HTMLInputElement;
-    if (this.bibleService.currentTheme === 'dark') {
+    if (this.historyService.currentTheme == 'dark') {
         toggleSwitch.checked = true;
     }
 
