@@ -23,6 +23,7 @@ nav {
 .titleButton {
     font-weight: bold;
     color: var(--zInk);
+ //   border: solid var(--buttonBorder) 1px;
     background-color: var(--button);
     min-width: clamp(7rem, 30vw, 13rem);
     padding: 0.3em;
@@ -53,9 +54,9 @@ nav {
 		height: 0.4em;
 		background-color: var(--button);
 		border-radius: 0.25em;
+        border: solid var(--buttonBorder) 1px;
 		transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965);
         
-
 		&:first-of-type {
 			top: 0.1em;
 		}

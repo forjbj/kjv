@@ -17,7 +17,6 @@ export class MenuComponent implements OnInit {
    }
 
   ngOnInit(): void {
-/* Dark mode theme TODO -THIS CODE WORKS DON'T REMOVE*/
 
     const toggleSwitch = document.getElementById('theme') as HTMLInputElement;
     if (this.bibleService.currentTheme === 'dark') {
@@ -25,16 +24,16 @@ export class MenuComponent implements OnInit {
     }
 
   }
-/* Dark mode theme TODO -THIS CODE WORKS DON'T REMOVE */
+/* Change theme */
   themeChange(){
       let theme = document.getElementById('theme') as HTMLInputElement;
       let el = document.body;
       if (theme.checked) {
-        document.documentElement.setAttribute('dataTheme', 'dark'); // THIS MAY NEED CHANGING TO WORK? CSS OR SCSS?
+        document.documentElement.setAttribute('dataTheme', 'dark'); 
         localStorage.setItem('theme', 'dark');
     }
     else {
-        document.documentElement.setAttribute('dataTheme', 'light'); // THIS MAY NEED CHANGING TO WORK? CSS OR SCSS?
+        document.documentElement.setAttribute('dataTheme', 'light'); 
         localStorage.setItem('theme', 'light');
     }   
     };

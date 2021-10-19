@@ -26,7 +26,7 @@ export class BibleService {
 
   public menuHistoryBook: boolean = false;
 
-  public currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+  public currentTheme = localStorage.getItem('theme');
 
 
 

@@ -48,6 +48,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  border-radius: 0.3em;
   background-color: var(--lightRed);
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -58,8 +59,9 @@
   height: 1em;
   width: 1em;
   left: 0.1em;
-  margin: 0.1em auto;
-  background-color: var(--buttonBorder);
+  border-radius: 0.25em;
+  bottom: 0.1em;
+  background-color: #eee;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 } 
