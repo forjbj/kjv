@@ -2,10 +2,10 @@
 
 .chaptersShow {
     z-index: 3;
-    background-color: rgba( $zPaper,  0.97);
-    border: 0 1px 1px 1px solid $ink;
-    box-shadow: 0 12px 7px -7px $zPaper;
-    color: $zInk;
+    background-color: var(--zPaper);
+    border: 0 1px 1px 1px solid var(--ink);
+    box-shadow: 0 12px 7px -7px var(--zPaper);
+    color: var(--zInk);
     position: absolute;
     display: block;
     left: 50%;
@@ -30,24 +30,25 @@
     justify-content: center;
 }
 .chapters {
-    border: 1px solid $buttonBorder;
+    border: 1px solid var(--buttonBorder);
     padding: 0.33rem 0rem; // needed to make square
     height: 1.2rem; // needed to stop gird 'bouncing' on bold hover
     line-height: 1.2rem; // as above
-    background-color: $button;
+    background-color: var(--button);
     cursor: pointer;
+    color: var(--ink);
     transition: 0.1s;
         &:hover, &:focus, &:active {
-            border:1px solid $button;
-            color: $darkRed;
+            border:1px solid var(--button);
+            color: var(--darkRed);
             font-weight: bold;
-            background-color: $buttonActive;
+            background-color: var(--buttonActive);
 
         }
 }
 .chapterScroll {
-    border:1px solid $button;
-    color: $darkRed;
+    border:1px solid var(--button);
+    color: var(--darkRed);
     font-weight: bold;
-    background-color: $buttonActive;
+    background-color: var(--buttonActive);
 }

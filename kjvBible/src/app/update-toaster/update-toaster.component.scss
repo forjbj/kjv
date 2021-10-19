@@ -5,7 +5,7 @@
     width: 7rem;
     height: 7rem;
     margin: auto;
-    background-color: $ink;
+    background-color: var(--ink);
     position: fixed;
     z-index: 7; //needed to keep on top
     left: 0;right:0;
@@ -19,14 +19,14 @@
         text-align: center;
         overflow: hidden;
         white-space: nowrap;
-        color: $paper;
+        color: var(--paper);
         
         button {
             margin: 0.3rem;
-            background-color: $darkRed;
-            color: $paper;
+            background-color: var(--darkRed);
+            color: var(--paper);
             &:hover, &:focus, &:active {
-                background-color: $lightRed;
+                background-color: var(--lightRed);
             }
         }
     }
@@ -36,7 +36,7 @@
         width: 7rem;
         height: 100%;
         float: left;
-        background-color: $zPaper;
+        background-color: var(--zPaper);
     }
     &.show {
         visibility: visible;

@@ -6,10 +6,10 @@ nav {
     position: sticky;
     top: 0;
     text-align: center;
-    background-color: $nav;
-    border-bottom: $ink solid 1px;
+    background-color: var(--nav);
+    border-bottom: var(--ink) solid 1px;
     font-family: "Bookman", Georgia, serif;
-    color: $zInk;
+    color: var(--zInk);
     height: 2.2em;
     transition: top 0.3s; // animate scroll nav for Bible See display-chapter.component.ts
 } 
@@ -22,16 +22,16 @@ nav {
 // book title button
 .titleButton {
     font-weight: bold;
-    color: $zInk;
-    background-color: $button;
+    color: var(--zInk);
+    background-color: var(--button);
     min-width: clamp(7rem, 30vw, 13rem);
     padding: 0.3em;
     margin: 0.3em;
     cursor: pointer;
     transition: 0.3s;
     &:hover, &:focus, &:active {
-        color: $ink;
-        background-color: $buttonActive;
+        color: var(--ink);
+        background-color: var(--buttonActive);
         outline: 0; //needed for chrome
     }
 }
@@ -44,14 +44,14 @@ nav {
     width: 2em;
     height: 2em;
     &:hover span, &:focus span{
-        background-color: $buttonActive;
+        background-color: var(--buttonActive);
     }
     span {
         position: absolute;
         display: block;
 		width: 100%;
 		height: 0.4em;
-		background-color: $button;
+		background-color: var(--button);
 		border-radius: 0.25em;
 		transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965);
         
@@ -85,5 +85,5 @@ nav {
     }
 }
 .menuButtonActive span {
-    background-color: $buttonActive;
+    background-color: var(--buttonActive);
 }

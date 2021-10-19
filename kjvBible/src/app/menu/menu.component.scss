@@ -4,10 +4,10 @@
   position: absolute;
   min-width: 20%;
   z-index: 3;
-  border: 0 1px 1px 1px solid $ink;
+  border: 0 1px 1px 1px solid var(--ink);
   right: 0;
-  background-color: rgba( $zPaper,  0.97);
-  color: $zInk;
+  background-color: var(--zPaper);
+  color: var(--zInk);
   hr {
     // check divider in line with links
     margin: 1em;
@@ -48,7 +48,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: $lightRed;
+  background-color: var(--lightRed);
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -59,15 +59,15 @@
   width: 1em;
   left: 0.1em;
   margin: 0.1em auto;
-  background-color: $zInk;
+  background-color: var(--buttonBorder);
   -webkit-transition: 0.5s;
   transition: 0.5s;
 } 
 input:checked + .slider {
-  background-color: $darkRed;
+  background-color: var(--darkRed);
 }
 input:focus + .slider {
-  box-shadow: 0 0 1px $button;
+  box-shadow: 0 0 1px var(--button);
 }
 input:checked + .slider:before {
   -webkit-transform: translateX(1.7em);

@@ -1,9 +1,9 @@
 <ng-container>
     <!-- Render book selected from history in menu -->
-  <!--  <div *ngIf = "bibleService.menuHistoryBook == true; else notMenu" [outerHTML] = "domSanitizer.bypassSecurityTrustHtml(historyService.menuBook)" ></div> -->
+<!--    <div *ngIf = "bibleService.menuHistoryBook == true; else notMenu" [outerHTML] = "domSanitizer.bypassSecurityTrustHtml(historyService.menuBook)" ></div> -->
     <!-- Render selected book -->
- <!--   <ng-template #notMenu> -->
-        <div id="currentBook" class="theme" (click) = "bibleService.showChapters = false; bibleService.displayMenu = false;">
+<!--    <ng-template #notMenu> -->
+        <div id="currentBook" (click) = "bibleService.showChapters = false; bibleService.displayMenu = false;">
             <div class = "headings"
                 [innerHTML] = "bibleService.bible[bibleService.testament].books[bibleService.bookSelected].title">
             </div>

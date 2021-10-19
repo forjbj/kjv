@@ -20,12 +20,12 @@ export class TheBibleComponent implements OnInit, AfterContentInit {
     
     title.setTitle('Bible');
     this.meta.addTag({ name: 'description', content: 'Bible - King James Version'});
-/* Dark mode theme TODO -THIS CODE WORKS DON'T REMOVE
+/* Dark mode theme TODO -THIS CODE WORKS DON'T REMOVE */
 
     if (this.bibleService.currentTheme) {
       document.documentElement.setAttribute('data-theme', this.bibleService.currentTheme); // THIS MAY NEED CHANGING TO WORK? CSS OR SCSS?
     }
-*/
+
   } 
 
   ngOnInit() { 

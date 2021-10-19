@@ -12,6 +12,11 @@ export class AppComponent {
   updateAvailable = false;
 
   constructor(private updates: SwUpdate) {
+
+    // apply dark theme if set in storage
+    if (localStorage.getItem('theme') == 'dark') {
+      document.documentElement.setAttribute('dataTheme', 'dark');
+    }
     
     this.updates.available.subscribe((event) => {
       this.updateAvailable = true;

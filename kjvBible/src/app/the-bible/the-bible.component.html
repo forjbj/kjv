@@ -1,9 +1,9 @@
-<!-- This outside/fullpage div is necessary for the nav to stay sticky in apple stuff; don't ask I don't know either-->
+<!-- This outside/fullpage division is necessary for the nav to stay sticky in apple stuff; don't ask I don't know either-->
 <div> 
   <nav id = "nav">
     <div *ngIf = "bibleService.title != bibleService.versionTitle; else version"
         (click) = "bibleService.displayMenu = false;">
-      <button autofocus class = "titleButton"
+      <button class = "titleButton"
               (click) = "bibleService.showChapters = !bibleService.showChapters;">
         {{bibleService.title}} 
       </button>

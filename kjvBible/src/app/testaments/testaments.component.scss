@@ -1,8 +1,8 @@
 @import "../../styles.scss";
 
 .theme {
-  color: $ink;
-  background-color: $paper;
+  color: var(--ink);
+  background-color: var(--paper);
 }
 //needed to stop blue/black border on click
 div:focus {
@@ -38,19 +38,19 @@ div:focus {
   font-size: clamp(1rem, 3vw, 1.2rem);
   cursor: pointer;
   &:hover {
-    color: $darkRed;
+    color: var(--darkRed);
     transform: scale(1.03);
     }
   //Text animation while loading
   &:active, &:focus {
     ::after {
       content: '.';
-      color: $darkRed;
+      color: var(--darkRed);
       position: absolute;
       animation: loading 1.2s infinite;
     }
     font-weight: bold;
-    color: $lightRed;
+    color: var(--lightRed);
   }
 }
 @keyframes loading {
