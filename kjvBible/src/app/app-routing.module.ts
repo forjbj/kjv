@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TestamentsComponent } from './testaments/testaments.component';
 import { DisplayBookComponent } from './display-book/display-book.component';
-import { MenuComponent } from './menu/menu.component';
-import { ChapterNumbersComponent } from './chapter-numbers/chapter-numbers.component';
 
 const routes: Routes = [
   { path: '',
@@ -17,6 +15,9 @@ const routes: Routes = [
     component: DisplayBookComponent,
   },
   { path: 'book/:id',
+    component: DisplayBookComponent,
+  },
+  { path: '**', //this must be last or everything redirects here
     component: DisplayBookComponent,
   },
 ];
