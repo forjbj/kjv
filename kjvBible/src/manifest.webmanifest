@@ -1,7 +1,7 @@
 {
   "name": "kjvBible",
   "short_name": "Bible",
-  "theme_color": "#777777",
+  "theme_color": "#000000",
   "background_color": "#aaaaaa",
   "display": "standalone",
   "scope": "./",
