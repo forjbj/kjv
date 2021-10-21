@@ -1,5 +1,5 @@
 {
-  "name": "bible-kjv",
+  "name": "kjv-bible",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
