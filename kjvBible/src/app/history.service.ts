@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class HistoryService {
 
-  public currentTheme:string = localStorage.getItem('theme');
+  public currentTheme:string;
 
   public currentBookMenu: string;
   public secondBookMenu: string;
@@ -38,6 +38,8 @@ export class HistoryService {
               public router: Router) { } 
 
   menuBooks() {
+    this.currentTheme =  localStorage.getItem('theme');
+    
     this.currentBookMenu = this.bibleService.bible[Number(localStorage.getItem('currentTestamentIndex'))].books[Number(localStorage.getItem('currentBookIndex'))].bookName
     + ' '  + localStorage.getItem('currentChapter') ;
   // this.currentBook = localStorage.getItem('currentBookHTML');
