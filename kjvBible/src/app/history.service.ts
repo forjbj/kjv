@@ -12,10 +12,12 @@ export class HistoryService {
   public currentBookMenu: string;
   public secondBookMenu: string;
   public thirdBookMenu: string;
-//  public menuBook: string;        // STORING BOOKS IN HTML WORKS, HOWEVER FUNCTIONALITY IS LIMITED DUE TO 'DOM SANITIZER'
-//  public currentBook: string;     // i.e. CLICKING ON PAGE (STORED HTML) WON'T CLOSE CHAPTER NUMBERS OR MENU.
-//  public secondBook: string;      // TO DO - maybe
-//  public thirdBook: string;
+
+// Store books in HTML for quick reload
+/*  public menuBook: string;         
+  public currentBook: string;     BROKEN: WILL WORK BUT CSS WILL NOT LOAD ON RELOADING WEBPAGE AND THEN USING HISTORY - NO IDEA - TODO
+  public secondBook: string;      
+  public thirdBook: string; */
 
   public currentChapter: string;
   public currentSavedChapter: string;
@@ -38,93 +40,100 @@ export class HistoryService {
   menuBooks() {
     this.currentBookMenu = this.bibleService.bible[Number(localStorage.getItem('currentTestamentIndex'))].books[Number(localStorage.getItem('currentBookIndex'))].bookName
     + ' '  + localStorage.getItem('currentChapter') ;
-//   this.currentBook = localStorage.getItem('currentBookHTML');
+  // this.currentBook = localStorage.getItem('currentBookHTML');
     if (localStorage.getItem('secondTestamentIndex') != null) {
       this.secondBookMenu = this.bibleService.bible[Number(localStorage.getItem('secondTestamentIndex'))].books[Number(localStorage.getItem('secondBookIndex'))].bookName
       + ' ' + localStorage.getItem('secondSavedChapter') ;
-//     this.secondBook = localStorage.getItem('secondBookHTML');
+  //   this.secondBook = localStorage.getItem('secondBookHTML');
     }
     if (localStorage.getItem('thirdTestamentIndex') != null) {
       this.thirdBookMenu = this.bibleService.bible[Number(localStorage.getItem('thirdTestamentIndex'))].books[Number(localStorage.getItem('thirdBookIndex'))].bookName
       + ' ' + localStorage.getItem('thirdSavedChapter') ;
-//     this.thirdBook = localStorage.getItem('thirdBookHTML');
+  //   this.thirdBook = localStorage.getItem('thirdBookHTML');
     }
   }
 
   rearrangeBooks(book:string) {
 
-  this.bibleService.menuHistoryBook = true;
+    this.bibleService.menuHistoryBook = true;
 
-  const testament: string = localStorage.getItem('currentTestamentIndex');
-  const bookNum: string = localStorage.getItem('currentBookIndex');
-  const chapter: string = localStorage.getItem('currentChapter');
-  const scroll: string = localStorage.getItem('currentScrollY');
-//  const currentBook: string = localStorage.getItem('currentBookHTML');
-
-  const secondTestament: string = localStorage.getItem('secondTestamentIndex');
-  const secondBookNum: string = localStorage.getItem('secondBookIndex');
-  const secondChapter: string = localStorage.getItem('secondSavedChapter');
-  const secondScroll: string = localStorage.getItem('secondScrollYSaved');
-//  const secondBook: string = localStorage.getItem('secondBookHTML');
-
-  switch (book) {
-    case 'current':
-      this.bibleService.testament = Number(testament);
-      this.bibleService.bookSelected = Number(bookNum);
-      localStorage.setItem('currentChapter', chapter);
-      localStorage.setItem('currentScrollY', scroll);
-//     this.menuBook = currentBook;
-      break;
-    
-    case 'second':
-      this.bibleService.testament = Number(secondTestament);
-      this.bibleService.bookSelected = Number(secondBookNum);
-      localStorage.setItem('currentChapter', secondChapter);
-      localStorage.setItem('currentScrollY', secondScroll);
-//      localStorage.setItem('currentBookHTML', secondBook); 
-
-      localStorage.setItem('secondTestamentIndex', testament);
-      localStorage.setItem('secondBookIndex', bookNum);
-      localStorage.setItem('secondSavedChapter', chapter);
-      localStorage.setItem('secondScrollYSaved', scroll);
-//      localStorage.setItem('secondBookHTML', currentBook);
-//      this.menuBook =secondBook;
-      break;
+    switch (book) {
+      case 'current':
+  //      this.menuBook = this.currentBook;
+        break;
       
-    case 'third':
-//      const thirdBook = localStorage.getItem('thirdBookHTML');
-      this.bibleService.testament = Number(localStorage.getItem('thirdTestamentIndex'));
-      this.bibleService.bookSelected = Number(localStorage.getItem('thirdBookIndex'));
-      localStorage.setItem('currentChapter', localStorage.getItem('thirdSavedChapter'));
-      localStorage.setItem('currentScrollY', localStorage.getItem('thirdScrollYSaved'));
-//      localStorage.setItem('currentBookHTML', thirdBook );
+      case 'second':
+        this.currentTestamentArray = localStorage.getItem('currentTestamentIndex');
+        this.currentBookArray = localStorage.getItem('currentBookIndex');
+        this.currentChapter = localStorage.getItem('currentChapter');
+        this.currentScrollYPostion = localStorage.getItem('currentScrollY');
+  //      this.currentBook= localStorage.getItem('currentBookHTML');
+        this.secondTestamentArray= localStorage.getItem('secondTestamentIndex');
+        this.secondBookArray = localStorage.getItem('secondBookIndex');
+        this.secondSavedChapter = localStorage.getItem('secondSavedChapter');
+        this.secondScrollYPosition = localStorage.getItem('secondScrollYSaved');
+  //      this.secondBook = localStorage.getItem('secondBookHTML');
 
-      localStorage.setItem('secondTestamentIndex', testament);
-      localStorage.setItem('secondBookIndex', bookNum);
-      localStorage.setItem('secondSavedChapter', chapter);
-      localStorage.setItem('secondScrollYSaved', scroll);
-//      localStorage.setItem('secondBookHTML', currentBook);
+        this.bibleService.testament = Number(this.secondTestamentArray);
+        this.bibleService.bookSelected = Number(this.secondBookArray);
+        localStorage.setItem('currentChapter', this.secondSavedChapter);
+        localStorage.setItem('currentScrollY', this.secondScrollYPosition);
+  //      localStorage.setItem('currentBookHTML', this.secondBook); 
 
-      localStorage.setItem('thirdTestamentIndex', secondTestament);
-      localStorage.setItem('thirdBookIndex', secondBookNum);
-      localStorage.setItem('thirdSavedChapter', secondChapter);
-      localStorage.setItem('thirdScrollYSaved', secondScroll);
-//      localStorage.setItem('thirdBookHTML', secondBook);
-//      this.menuBook = thirdBook;
-      break;
-  };
-  this.bibleService.title = this.bibleService.bible[this.bibleService.testament].books[this.bibleService.bookSelected].bookName;
-  localStorage.setItem('currentTestamentIndex', (this.bibleService.testament).toString());
-  localStorage.setItem('currentBookIndex', (this.bibleService.bookSelected).toString());
+        localStorage.setItem('secondTestamentIndex', this.currentTestamentArray);
+        localStorage.setItem('secondBookIndex', this.currentBookArray);
+        localStorage.setItem('secondSavedChapter', this.currentChapter);
+        localStorage.setItem('secondScrollYSaved', this.currentScrollYPostion);
+  //      localStorage.setItem('secondBookHTML', this.currentBook);
 
-  this.bibleService.showChapters = false;
-  this.bibleService.displayMenu = false;
-  
-  //hack to force angular to reload with the above parameters - route to '/' then back
-  this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-    this.router.navigate(['book', this.bibleService.title]);
-  }); 
+  //      this.menuBook = this.secondBook;
+        break;
+        
+      case 'third':
+        this.currentTestamentArray = localStorage.getItem('currentTestamentIndex');
+        this.currentBookArray = localStorage.getItem('currentBookIndex');
+        this.currentChapter = localStorage.getItem('currentChapter');
+        this.currentScrollYPostion = localStorage.getItem('currentScrollY');
+  //      this.currentBook= localStorage.getItem('currentBookHTML');
+        this.secondTestamentArray= localStorage.getItem('secondTestamentIndex');
+        this.secondBookArray = localStorage.getItem('secondBookIndex');
+        this.secondSavedChapter = localStorage.getItem('secondSavedChapter');
+        this.secondScrollYPosition = localStorage.getItem('secondScrollYSaved');
+  //      this.secondBook = localStorage.getItem('secondBookHTML');
+  //      this.thirdBook = localStorage.getItem('thirdBookHTML');
 
+        this.bibleService.testament = Number(localStorage.getItem('thirdTestamentIndex'));
+        this.bibleService.bookSelected = Number(localStorage.getItem('thirdBookIndex'));
+        localStorage.setItem('currentChapter', localStorage.getItem('thirdSavedChapter'));
+        localStorage.setItem('currentScrollY', localStorage.getItem('thirdScrollYSaved'));
+  //      localStorage.setItem('currentBookHTML', this.thirdBook );
+
+        localStorage.setItem('secondTestamentIndex', this.currentTestamentArray);
+        localStorage.setItem('secondBookIndex', this.currentBookArray);
+        localStorage.setItem('secondSavedChapter', this.currentChapter);
+        localStorage.setItem('secondScrollYSaved', this.currentScrollYPostion);
+  //      localStorage.setItem('secondBookHTML', this.currentBook);
+
+        localStorage.setItem('thirdTestamentIndex', this.secondTestamentArray);
+        localStorage.setItem('thirdBookIndex', this.secondBookArray);
+        localStorage.setItem('thirdSavedChapter', this.secondSavedChapter);
+        localStorage.setItem('thirdScrollYSaved', this.secondScrollYPosition);
+  //      localStorage.setItem('thirdBookHTML', this.secondBook);
+
+  //      this.menuBook = this.thirdBook;
+        break;
+    };
+    this.bibleService.title = this.bibleService.bible[this.bibleService.testament].books[this.bibleService.bookSelected].bookName;
+    localStorage.setItem('currentTestamentIndex', (this.bibleService.testament).toString());
+    localStorage.setItem('currentBookIndex', (this.bibleService.bookSelected).toString());
+
+    this.bibleService.showChapters = false;
+    this.bibleService.displayMenu = false;
+    
+    //hack to force angular to reload with the above parameters - route to '/' then back
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['book', this.bibleService.title]);
+    }); 
   }
 
   newBook() {
@@ -133,7 +142,8 @@ export class HistoryService {
                                       .books[Number(localStorage.getItem('currentBookIndex'))].bookName ) ) 
                                     || (localStorage.getItem('currentChapter') == null) ) {
         localStorage.setItem('currentScrollY', '0');
-        localStorage.setItem('currentChapter', '1');
+        localStorage.setItem('currentChapter', '1');  
+        this.bibleService.showChapters = true;
     } 
   }
 
@@ -146,8 +156,8 @@ export class HistoryService {
     // only execute if not selected from history
     if (this.bibleService.menuHistoryBook == false) {
 
-//      this.currentBook = localStorage.getItem('currentBookHTML');
-//      this.secondBook = localStorage.getItem('secondBookHTML');
+  //    this.currentBook = localStorage.getItem('currentBookHTML');
+  //    this.secondBook = localStorage.getItem('secondBookHTML');
 
       this.currentBookArray = localStorage.getItem('currentBookIndex');
       this.currentTestamentArray = localStorage.getItem('currentTestamentIndex');
@@ -166,18 +176,18 @@ export class HistoryService {
           localStorage.setItem('thirdBookIndex', this.secondBookArray);
           localStorage.setItem('thirdScrollYSaved', this.secondScrollYPosition);
           localStorage.setItem('thirdSavedChapter', this.secondSavedChapter);
-//          localStorage.setItem('thirdBookHTML', this.secondBook);
+  //        localStorage.setItem('thirdBookHTML', this.secondBook);
         }
         localStorage.setItem('secondTestamentIndex', this.currentTestamentArray);
         localStorage.setItem('secondBookIndex', this.currentBookArray);
         localStorage.setItem('secondScrollYSaved', this.currentScrollYPostion);
         localStorage.setItem('secondSavedChapter', this.currentSavedChapter);
-//        localStorage.setItem('secondBookHTML', this.currentBook);
+  //      localStorage.setItem('secondBookHTML', this.currentBook);
       }
       // The following need to be here or history won't originally populate
       localStorage.setItem('currentTestamentIndex', (this.bibleService.testament).toString());
       localStorage.setItem('currentBookIndex', (this.bibleService.bookSelected).toString());
-//      localStorage.setItem('currentBookHTML', document.getElementById('currentBook').outerHTML);
+  //    localStorage.setItem('currentBookHTML', document.getElementById('currentBook').outerHTML);
     }
   }
 }

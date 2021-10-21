@@ -1,9 +1,10 @@
-<ng-container>
-    <!-- Render book selected from history in menu -->
-<!--    <div *ngIf = "bibleService.menuHistoryBook == true; else notMenu" [outerHTML] = "domSanitizer.bypassSecurityTrustHtml(historyService.menuBook)" ></div> -->
+<div (click) = "bibleService.showChapters = false; bibleService.displayMenu = false;">
+    <ng-container>
+    <!-- Render book from localStorage if selected from history in menu -->
+    <!--    <div *ngIf = "bibleService.menuHistoryBook == true; else notMenu" [outerHTML] = "domSanitizer.bypassSecurityTrustHtml(historyService.menuBook)" ></div> -->
     <!-- Render selected book -->
-<!--    <ng-template #notMenu> -->
-        <div id="currentBook" (click) = "bibleService.showChapters = false; bibleService.displayMenu = false;">
+    <!-- <ng-template #notMenu> -->
+        <div id="currentBook" >
             <div class = "headings"
                 [innerHTML] = "bibleService.bible[bibleService.testament].books[bibleService.bookSelected].title">
             </div>
@@ -54,5 +55,6 @@
                 <hr>
             </div>
         </div>
-<!--    </ng-template> -->
-</ng-container>
+    <!-- </ng-template> -->
+    </ng-container>
+</div>

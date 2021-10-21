@@ -15,15 +15,14 @@ export class BibleService {
 
   public bookSelected:number = Number(localStorage.getItem('currentBookIndex')); // defaults to '0' (Genesis) see above
 
-  public title: string = this.bible[this.testament].books[this.bookSelected].bookName ?? "Bible";
+  public title: string = this.bible[this.testament].books[this.bookSelected].bookName || "Bible";
 
-  public showChapters: boolean; /*for chapter selection MUST BE toggled in display-book.component.ts 
+  public showChapters: boolean = false; /*for chapter highlighting MUST BE toggled 
                                 (scroll through chapters doesn't work otherwise); 
-                                set to 'true' in testament component selection, but doesn't highligh to chapter 1; 
+                                set to 'true' in historyService.newBook() selection, but doesn't highligh to chapter 1; 
                                 not working TODO;
-                                */
+                                */ 
   public displayMenu: boolean = false;
-
   public menuHistoryBook: boolean = false;
 
 

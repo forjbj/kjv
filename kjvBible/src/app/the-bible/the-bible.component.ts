@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { BibleService } from '../bible.service';
 import { HistoryService } from '../history.service';
 import { Meta, Title } from '@angular/platform-browser';
@@ -9,7 +9,7 @@ import { Meta, Title } from '@angular/platform-browser';
   styleUrls: ['./the-bible.component.scss']
 })
 
-export class TheBibleComponent implements OnInit, AfterContentInit {
+export class TheBibleComponent  {
 
 
   constructor(public bibleService: BibleService,
@@ -23,10 +23,4 @@ export class TheBibleComponent implements OnInit, AfterContentInit {
 
   } 
 
-  ngOnInit() { 
-
-  }
-  ngAfterContentInit() {
-
-  }
 }

@@ -22,7 +22,7 @@
   margin: 1em;
   cursor: pointer;
 }
-//dark mode toggle switch
+//dark theme toggle switch
 // The switch - the box around the slider
 .mode {
   text-align: left;
@@ -32,7 +32,7 @@
   position: relative;
   float: right;
   width: 3em;
-  height: 1.2em;
+  height: 1em;
   margin-left: 1em;
 }
 // Hide default HTML checkbox 
@@ -61,7 +61,6 @@
   width: 1em;
   left: 0.1em;
   border-radius: 0.25em;
-  bottom: 0.1em;
   background-color: #eee;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -77,4 +76,4 @@ input:checked + .slider:before {
   -ms-transform: translateX(1.7em);
   transform: translateX(1.7em);
 }
-// end dark mode toggle switch
+// end dark theme toggle switch

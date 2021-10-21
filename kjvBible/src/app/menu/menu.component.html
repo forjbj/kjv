@@ -10,7 +10,7 @@
     <hr>
     <div class="history">
         History:
-        <ul class = "links" (click) = "historyService.rearrangeBooks('current')"> 
+        <ul class = "links" (click) = "historyService.rearrangeBooks('current');"> 
             {{this.historyService.currentBookMenu}}
         </ul>
         <ul class = "links" (click) = "historyService.rearrangeBooks('second');">
@@ -21,7 +21,7 @@
         </ul>
     </div>
     <hr>
-    <!-- Dark mode TODO -->
+    <!-- Theme -->
     <div class="mode">
         Dark Theme
         <label class="switch">
