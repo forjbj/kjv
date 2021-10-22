@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import kjvBible from '../assets/bible/Bible.json';
+import Bible from '../assets/bible/Bible.json';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +7,7 @@ import kjvBible from '../assets/bible/Bible.json';
 export class BibleService {
 
   // import Bible
-  public bible = kjvBible;
+  public bible = Bible;
 
   public versionTitle = 'King James Version';
 

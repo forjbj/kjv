@@ -132,14 +132,17 @@ export class HistoryService {
     this.bibleService.showChapters = false;
     this.bibleService.displayMenu = false;
     
-    //hack to force angular to reload with the above parameters - route to '/' then back
-    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      //Below works, however gives an error code 404 from static server (github pages) on reload - fix applied in app.component.ts
-      this.router.navigate(['/book', this.bibleService.title]);  
+    //hack to force angular to reload with the above parameters - route to '/testament' then back
+    this.router.navigateByUrl('/testament', { skipLocationChange: true }).then(() => {
+      //Below works, however gives an error code 404 from static server (github pages) on reload 
+      this.router.navigate(['/book']);  
     }); 
   }
 
   newBook() {
+ //   if (this.currentChapter == null) {
+  //    this.router.navigate(['book']);
+  //  }
   // reset scroll position if new book selected                
     if ((this.bibleService.title != (this.bibleService.bible[Number(localStorage.getItem('currentTestamentIndex'))]
                                       .books[Number(localStorage.getItem('currentBookIndex'))].bookName ) ) 

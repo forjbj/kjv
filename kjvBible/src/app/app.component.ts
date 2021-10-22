@@ -26,10 +26,11 @@ export class AppComponent {
 
     });
   }
+  /* THIS DOESN'T FIX THE PROBLEM 
   @HostListener('window:beforeunload')
   async ngOnDestroy() {
   // Change route on reload as static server doesn't deal well with book/:id route
   this.router.navigate(['/book']);
-  } 
+  } */
 }
 
