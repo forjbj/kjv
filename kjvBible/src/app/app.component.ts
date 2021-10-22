@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 import { SwUpdate } from '@angular/service-worker';
 
 @Component({
@@ -11,7 +12,8 @@ export class AppComponent {
 
   updateAvailable = false;
 
-  constructor(private updates: SwUpdate) {
+  constructor(private updates: SwUpdate,
+              public router: Router,) {
 
     // apply dark theme if set in storage
     if (localStorage.getItem('theme') == 'dark') {
@@ -24,6 +26,10 @@ export class AppComponent {
 
     });
   }
-
+  @HostListener('window:beforeunload')
+  async ngOnDestroy() {
+  // Change route on reload as static server doesn't deal well with book/:id route
+  this.router.navigate(['/book']);
+  } 
 }
 

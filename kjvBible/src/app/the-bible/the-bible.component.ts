@@ -15,12 +15,13 @@ export class TheBibleComponent  {
   constructor(public bibleService: BibleService,
               public historyService: HistoryService,
               private meta: Meta,
-              private title: Title
+              private title: Title,
               ) {
     
     title.setTitle('Bible');
     this.meta.addTag({ name: 'description', content: 'Bible - King James Version'});
 
   } 
+
 
 }

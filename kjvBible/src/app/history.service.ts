@@ -134,7 +134,8 @@ export class HistoryService {
     
     //hack to force angular to reload with the above parameters - route to '/' then back
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      this.router.navigate(['book', this.bibleService.title]);
+      //Below works, however gives an error code 404 from static server (github pages) on reload - fix applied in app.component.ts
+      this.router.navigate(['/book', this.bibleService.title]);  
     }); 
   }
 

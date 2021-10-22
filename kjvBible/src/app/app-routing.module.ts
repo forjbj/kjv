@@ -14,8 +14,8 @@ const routes: Routes = [
   { path: 'book',
     component: DisplayBookComponent,
   },
-  { path: 'book/:id',
-    component: DisplayBookComponent,
+  { path: 'book/:id',               //this works, however gives an error code 404 from static server (github pages)
+    component: DisplayBookComponent, // Fix applied to app-component.ts
   },
   { path: '**', //this must be last or everything redirects here
     component: DisplayBookComponent,
@@ -28,7 +28,7 @@ const routes: Routes = [
     anchorScrolling: 'enabled',
     scrollOffset: [0, 52],
     relativeLinkResolution: 'legacy',
-    onSameUrlNavigation: 'reload' // necessary for history books to load properly
+//    onSameUrlNavigation: 'reload' // necessary for history books to load properly //nope
 })
   ],
   exports: [RouterModule]

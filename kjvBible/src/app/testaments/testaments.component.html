@@ -3,6 +3,7 @@
     <h2 class = testamentTitle>{{testamentBook.testament}} Testament</h2>
     <div class ="bookGrid" >
       <ng-container *ngFor = "let book of bibleService.bible[j].books; index as i">
+<!-- [routerLink] = "['/book', book.bookName]" give error from static site (github pages) on reload - fix applied in app.component.ts-->
         <div 
           class = "bookItem"
           [routerLink] = "['/book', book.bookName]"

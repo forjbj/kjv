@@ -13,6 +13,7 @@
   <div  class="chapterGrid">
     <ng-container 
     *ngFor = "let chapters of bibleService.bible[bibleService.testament].books[bibleService.bookSelected].chapters" >
+<!-- [routerLink] = "['/book', bibleService.title]" give error from static site (github pages) on reload - fix applied in app.component.ts-->
       <div 
           class = "chapters"
           [routerLink] = "['/book', bibleService.title]"
